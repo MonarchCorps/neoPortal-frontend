@@ -49,7 +49,7 @@ function MenuDropdown() {
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
 				<button type="button" className="hidden chsm:block">
-					<IoMenu className="text-[#dad9d9] text-3xl w-full" />
+					<IoMenu className="text-[#dad9d9] text-3xl" />
 				</button>
 			</DropdownMenuTrigger>
 
