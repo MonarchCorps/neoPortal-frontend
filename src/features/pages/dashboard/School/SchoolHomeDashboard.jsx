@@ -236,7 +236,7 @@ function SchoolHomeDashboard() {
                                     <Loading2 text='Loading list of teachers' data='' isLoading={teacherIsLoading} />
                                 </div>
                             ) : !teacherIsLoading && data?.length > 0 ? (
-                                [1, 2]?.map((teacher, i) => {
+                                data?.map((teacher, i) => {
                                     return (
                                         <div key={i} className="grid grid-cols-6 px-6 py-[0.9rem] my-5 border border-solid rounded-md hlg:grid-cols-3 hlg:gap-y-4 msm:grid-cols-2 hxsm:flex hxsm:flex-col">
                                             <div className='grid grid-cols-[40px,1fr] gap-4 msm:hidden'>
