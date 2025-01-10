@@ -17,7 +17,7 @@ function Achievements() {
                     />
                     <div className="grid grid-cols-2 text-center gap-10 csm:gap-6 aemd:mt-8">
                         <div>
-                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-red-900 csm:text-3xl'>34Mn+</h1>
+                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-red-900 csm:text-3xl'>34M+</h1>
                             <p className='text-xl font-500 csm:text-base'>Assessments</p>
                         </div>
                         <div>
@@ -29,7 +29,7 @@ function Achievements() {
                             <p className='text-xl font-500 csm:text-base'>Countries</p>
                         </div>
                         <div>
-                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-red-900 csm:text-3xl'>12.5Mn+</h1>
+                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-red-900 csm:text-3xl'>12.5M+</h1>
                             <p className='text-xl font-500 csm:text-base'>Paper Saved</p>
                         </div>
                     </div>
