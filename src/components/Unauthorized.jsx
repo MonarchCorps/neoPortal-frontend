@@ -9,11 +9,11 @@ function Unauthorized() {
     const navigate = useNavigate()
 
     return (
-        <>
+        <div className='flex flex-col min-h-screen'>
             <Header />
-            <main>
-                <section>
-                    <div className="flex flex-col items-center justify-center pt-44 space-y-4 text-center csm:px-6">
+            <main className='flex-1 h-full'>
+                <section className='h-full pt-20'>
+                    <div className="flex flex-col items-center justify-center h-full pt-44 space-y-4 text-center csm:px-6">
                         <div className="space-y-2">
                             <h1 className="text-4xl font-extrabold tracking-tighter sm:text-6xl csm:text-4xl">Unauthorized</h1>
                             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed dark:text-gray-400 csm:text-base/relaxed">
@@ -30,7 +30,7 @@ function Unauthorized() {
                 </section>
             </main>
             <Footer />
-        </>
+        </div>
     )
 }
 
