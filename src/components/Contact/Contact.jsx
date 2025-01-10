@@ -8,9 +8,9 @@ function Contact() {
             <Header />
             <main>
                 <section>
-                    <div className='pt-40 w-[85%] max-w-[700px] mx-auto'>
+                    <div className='pt-40 tmd:pt-48 w-[85%] max-w-[700px] mx-auto'>
                         <h1 className='mb-3 font-600 text-4xl'>Contact Page</h1>
-                        <div className='w-full grid grid-cols-2 gap-4'>
+                        <div className='w-full grid grid-cols-2 ixsm:flex ixsm:flex-col gap-4'>
                             <div className='flex flex-col gap-1'>
                                 <label htmlFor="name" className='text-base/relaxed font-500'>Name</label>
                                 <input
