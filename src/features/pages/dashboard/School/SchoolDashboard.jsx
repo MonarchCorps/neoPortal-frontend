@@ -1,6 +1,6 @@
 import { SidebarProvider } from '@/components/ui/sidebar'
 import { Outlet } from 'react-router-dom'
-import SideBar from './SideBar'
+import SideBar from './Sidebar'
 
 function SchoolDashboard() {
     return (
