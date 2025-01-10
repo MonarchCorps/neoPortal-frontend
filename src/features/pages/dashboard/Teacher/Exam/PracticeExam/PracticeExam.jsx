@@ -4,9 +4,11 @@ import { subjects } from '@/utils/subjects'
 import { MdOutlineClass } from 'react-icons/md'
 import useScrollTop from '@/hooks/useScrollTop'
 import QuestionsEditor from './QuestionsEditor'
+import useAuth from '@/hooks/useAuth'
 
 function PracticeExam() {
 
+    const { auth } = useAuth()
     const { scrollTop } = useScrollTop()
 
     const features = [
@@ -19,7 +21,7 @@ function PracticeExam() {
     const [formData, setFormData] = useState({
         examType: '',
         examYear: '',
-        subject: '',
+        subject: auth?.assignedSubject || '',
     })
 
     const [step, setStep] = useState(1)
@@ -125,13 +127,25 @@ function PracticeExam() {
                                     onChange={handleChange}
                                     value={formData.subject}
                                 >
-                                    <option value="subject">Subject</option>
-                                    {subjects.map(subject => (
-                                        <option key={subject.id} value={subject.text.replace(/\s+/g, '-').toLowerCase()}>
-                                            {subject.text}
-                                        </option>
-                                    ))}
+                                    {
+                                        !auth?.assignedSubject ? (
+                                            <>
+                                                <option value="subject">Subject</option>
+                                                {subjects.map(subject => (
+                                                    <option key={subject.id} value={subject.text.replace(/\s+/g, '-').toLowerCase()}>
+                                                        {subject.text}
+                                                    </option>
+                                                ))}
+                                            </>
+                                        ) : (
+                                            <option value={auth?.assignedSubject}>{auth?.assignedSubject.toUpperCase()}</option>
+                                        )
+                                    }
                                 </select>
+                                {auth?.assignedSubject && <p className='text-sm text-red-600 mt-4'>
+                                    You have been assigned a default subject by your school institute. You can&apos;t change it.
+                                    <span className='block text-[#000] font-poppins text-600'>Contact your institute for more details!</span>
+                                </p>}
                             </div>
 
                             <div className='grid justify-end'>
