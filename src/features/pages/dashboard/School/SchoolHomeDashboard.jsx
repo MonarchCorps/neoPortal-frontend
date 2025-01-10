@@ -11,6 +11,8 @@ import toast from "react-hot-toast"
 import { FaTrashCan } from "react-icons/fa6"
 import AddTeacher from "./AddTeacher"
 import EditTeacher from "./EditTeacher"
+import styled from "styled-components"
+import useGetScreenWidth from "@/hooks/useGetScreenWidth"
 
 const bgImg = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735378254/Exam_Portal/zjc6l4h3tehqfrolzmzy.jpg'
 
@@ -21,6 +23,7 @@ function SchoolHomeDashboard() {
     const { colors } = useGetColors()
     const dialogCloseRef = useRef(null)
     const queryClient = useQueryClient()
+    const { screenWidth } = useGetScreenWidth()
 
     const [currTeacherId, setCurrTeacherId] = useState('')
 
@@ -128,6 +131,38 @@ function SchoolHomeDashboard() {
         }
     })
 
+
+    const Text = styled.p`
+    font-size: 16px;
+        white-space: pre-wrap;
+        overflow: hidden;
+        max-height: ${({ expanded }) => (expanded ? "none" : "300px")};
+        transition: max-height 0.3s ease;
+    `;
+
+    const ToggleButton = styled.button`
+        margin-top: 1px;
+        color: #D6809C;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+
+        &:hover {
+           text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            width: auto;
+        }
+    `;
+
+    const [expanded, setExpanded] = useState(false)
+
+    const toggleReadMore = () => {
+        setExpanded(!expanded);
+    }
+
     return (
         <>
             <Loading isLoading={handleAddTeacher.isPending || handleDeleteTeacher.isPending} text={handleAddTeacher.isPending ? 'Creating teacher account' : handleDeleteTeacher.isPending ? 'Deleting teacher' : 'Loading...'} />
@@ -165,41 +200,65 @@ function SchoolHomeDashboard() {
                                 {auth?.name || 'School Institute'}
                             </h1>
                         </div>
-                        <UserDetails user={auth} />
-                        <div >
-                            <div className="flex items-center justify-between my-4">
+                        {screenWidth <= 510 ? (
+                            <>
+                                <Text expanded={expanded}>{<UserDetails user={auth} /> || 'providedExperience'}</Text>
+                                <ToggleButton onClick={toggleReadMore}>
+                                    {expanded ? "Read Less" : "Read More"}
+                                </ToggleButton>
+                            </>
+                        ) : (
+                            <UserDetails user={auth} />
+                        )}                        <div >
+                            <div className="flex items-center justify-between my-4 cfsm:flex-col cfsm:gap-2 cfsm:items-start">
                                 <h1 className="text-3xl">Teachers</h1>
                                 <AddTeacher dialogCloseRef={dialogCloseRef} handleAddTeacher={handleAddTeacher} handleChange={handleChange} formData={formData} setFormData={setFormData} emptyField={emptyField} />
                             </div>
                             <div className="my-2">
 
                                 <div className="grid grid-cols-6 bg-[#f2f2f26d] px-6 py-[0.9rem] rounded-xl mb-5">
-                                    <div className='grid grid-cols-[40px,1fr] gap-4'>
+                                    <div className=' hidden hlg:grid hlg:grid-cols-[40px,1fr] hlg:gap-4'>
+                                        <p className='font-500 font-poppins text-base'>S/N</p>
+                                        <p className='font-500 font-poppins text-base'>Details</p>
+                                    </div>
+                                    <div className='grid grid-cols-[40px,1fr] gap-4  hlg:hidden'>
                                         <p className='font-500 font-poppins text-base'>S/N</p>
                                         <p className='font-500 font-poppins text-base'>Name</p>
                                     </div>
-                                    <p className='col-span-2 font-500 font-poppins text-base text-center'>Email</p>
-                                    <p className='font-500 font-poppins text-base text-center'>Subject</p>
-                                    <p className='col-span-2 font-500 font-poppins text-base text-center'>Action</p>
+                                    <p className='col-span-2 font-500 font-poppins text-base text-center  hlg:hidden'>Email</p>
+                                    <p className='font-500 font-poppins text-base text-center hlg:hidden'>Subject</p>
+                                    <p className='col-span-2 font-500 font-poppins text-base text-center hlg:hidden'>Action</p>
                                 </div>
 
                             </div>
-
                             {teacherIsLoading ? (
                                 <div className="bg-red-700 text-[#fff] font-mon font-500 py-3 px-3 rounded-sm w-[85%] max-w-[1204px] mx-auto">
                                     <Loading2 text='Loading list of teachers' data='' isLoading={teacherIsLoading} />
                                 </div>
                             ) : !teacherIsLoading && data?.length > 0 ? (
-                                data?.map((teacher, i) => {
+                                [1, 2]?.map((teacher, i) => {
                                     return (
-                                        <div key={i} className="grid grid-cols-6 px-6 py-[0.9rem] my-5 border border-solid rounded-md">
-                                            <div className='grid grid-cols-[40px,1fr] gap-4'>
+                                        <div key={i} className="grid grid-cols-6 px-6 py-[0.9rem] my-5 border border-solid rounded-md hlg:grid-cols-3 hlg:gap-y-4 msm:grid-cols-2 hxsm:flex hxsm:flex-col">
+                                            <div className='grid grid-cols-[40px,1fr] gap-4 msm:hidden'>
                                                 <p className='font-500 font-poppins text-base'>{i + 1}.</p>
-                                                <p className='font-500 font-poppins text-base'>{trim(teacher?.name, 20)}</p>
+                                                <p className='font-500 font-poppins text-base'></p>
+                                                {trim(teacher?.name, 20)}
                                             </div>
-                                            <p className=' col-span-2 font-500 font-poppins text-base text-center'>{trim(teacher?.email, 20)}</p>
-                                            <p className='font-500 font-poppins text-base text-center capitalize'>{trim(teacher?.assignedSubject?.replace(/-/g, " "), 20)}</p>
-                                            <div className="col-span-2 text-center flex items-center justify-center gap-4">
+                                            <p className=' col-span-2 font-500 font-poppins text-base text-center msm:text-start'>
+                                                <span className="hidden msm:inline-block">{i + 1}.&nbsp;</span>
+                                                {trim(teacher?.email, 20)}
+                                            </p>
+                                            <p className='font-500 font-poppins text-base text-center capitalize hlg:text-start'>
+                                                <span className="hidden hlg:inline-block text-red-700">Subject:&nbsp;</span>
+                                                {trim(teacher?.assignedSubject?.replace(/-/g, " "), 20)}
+                                            </p>
+                                            <div className='hidden msm:grid msm:grid-cols-[40px,1fr] msm:gap-4 hxsm:flex hxsm:gap-2'>
+                                                <p className='font-500 font-poppins text-base'></p>
+                                                <span className="hidden hxsm:inline-block  text-red-700">Name:</span>
+                                                {trim(teacher?.name, 20)}
+                                            </div>
+                                            <div className="col-span-2 text-center flex items-center justify-center gap-4 hxsm:justify-start">
+                                                <span className="hidden hlg:inline-block text-red-700">Action:&nbsp;</span>
                                                 <EditTeacher dialogCloseRef={dialogCloseRef} handleEditTeacher={handleEditTeacher} handleEditChange={handleEditChange} editData={editData} editEmptyField={editEmptyField} setCurrTeacherId={setCurrTeacherId} teacherId={teacher?._id} />
                                                 <button className="text-red-600 text-2xl" onClick={() => handleDeleteTeacher.mutate({ teacherId: teacher?._id })}>
                                                     <FaTrashCan />
