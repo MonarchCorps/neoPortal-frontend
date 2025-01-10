@@ -1,4 +1,4 @@
-import { LayoutDashboard, Settings } from 'lucide-react'
+import { LayoutDashboard, Save, Settings } from 'lucide-react'
 
 import {
     LogOut,
@@ -27,6 +27,7 @@ import useLogout from '@/hooks/useLogout'
 import useAuth from '@/hooks/useAuth'
 import { Link } from 'react-router-dom'
 import Loading from '@/components/Loaders/Loading'
+import useScrollTop from '@/hooks/useScrollTop'
 
 function ProfileDropdown() {
 
@@ -34,7 +35,19 @@ function ProfileDropdown() {
 
     const { colors } = useGetColors()
     const { logout, logoutPending } = useLogout()
+    const { scrollTop } = useScrollTop()
 
+    const handleRedirectToProfilePage = () => {
+        if (auth?.role === 'student') {
+            return '/dashboard/student/edit-profile'
+        } else if (auth?.role === 'teacher') {
+            return '/dashboard/teacher/edit-profile'
+        } else if (auth?.role === 'school') {
+            return '/dashboard/school-institute/edit-profile'
+        } else {
+            return '/auth'
+        }
+    }
     return (
         <>
             <Loading text='Logging out' isLoading={logoutPending} />
@@ -68,15 +81,24 @@ function ProfileDropdown() {
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
-                        <DropdownMenuItem>
-                            <User />
-                            <span>Profile</span>
-                            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                        {console.log(handleRedirectToProfilePage())}
+                        <DropdownMenuItem onClick={scrollTop} asChild className='cursor-pointer'>
+                            <Link to={handleRedirectToProfilePage()}>
+                                <User />
+                                <span>Profile</span>
+                                <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                            </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <Settings />
                             <span>Settings</span>
                             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild className='cursor-pointer' onClick={scrollTop}>
+                            <Link to='/saved-questions'>
+                                <Save />
+                                <span>Saved</span>
+                            </Link>
                         </DropdownMenuItem>
                     </DropdownMenuGroup>
                     <DropdownMenuSeparator />

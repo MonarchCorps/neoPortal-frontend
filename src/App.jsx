@@ -36,6 +36,7 @@ import LiveExam from './components/LiveExam/LiveExam'
 import TeacherLiveExamPage from './features/pages/dashboard/Teacher/Exam/LiveExam/TeacherLiveExamPage'
 import MonitorStudents from './features/pages/dashboard/Teacher/Monitor/MonitorStudents'
 import SchoolHomeDashboard from './features/pages/dashboard/School/SchoolHomeDashboard'
+import SavedQuestions from './components/SavedQuestions'
 
 function ProtectedSubjectRoute({ children }) {
 	const { subject } = useParams();
@@ -116,6 +117,7 @@ function App() {
 						<Route path='/cbt-practice/live-exam'>
 							<Route index element={<LiveExam />} />
 						</Route>
+						<Route path='/saved-questions' element={<SavedQuestions />} />
 					</Route>
 
 					<Route path="/dashboard" element={<Navigate to={`/dashboard/${pathToRedirect()}`} replace />} />

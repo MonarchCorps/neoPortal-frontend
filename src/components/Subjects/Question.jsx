@@ -23,7 +23,7 @@ function Question() {
         enabled: !!subject
     })
 
-    const currentQuestion = questions.find(que => que?._id == questionId && que?.subject === subject)
+    const currentQuestion = questions?.find(que => que?._id == questionId && que?.subject === subject)
 
     return (
         <React.Fragment>
