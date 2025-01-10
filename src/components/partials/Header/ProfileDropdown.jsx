@@ -81,7 +81,6 @@ function ProfileDropdown() {
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
-                        {console.log(handleRedirectToProfilePage())}
                         <DropdownMenuItem onClick={scrollTop} asChild className='cursor-pointer'>
                             <Link to={handleRedirectToProfilePage()}>
                                 <User />
