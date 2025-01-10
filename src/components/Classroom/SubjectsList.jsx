@@ -30,12 +30,12 @@ function SubjectsList() {
                                     </div>
                                 </div>
                                 <div className='ahsm:flex ahsm:flex-col ahsm:gap-4'>
-                                    <Link to={`${subject.link}`} onClick={scrollTop} className='border-2 border-solid border-red-600 text-red-600 shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee] ahsm:text-center'>
+                                    <Link onClick={scrollTop} to={`${subject.link}`} className='border-2 border-solid border-red-600 text-red-600 shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee] ahsm:text-center'>
                                         Study questions
                                     </Link>
-                                    <button className='ml-4 ahsm:ml-0 border-2 border-solid border-red-600 text-red-600 shadow-sm p-2 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee]'>
+                                    {/* <button className='ml-4 ahsm:ml-0 border-2 border-solid border-red-600 text-red-600 shadow-sm p-2 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee]'>
                                         Save for later
-                                    </button>
+                                    </button> */}
                                 </div>
                             </figure>
                         )
