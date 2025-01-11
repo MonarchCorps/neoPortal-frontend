@@ -181,7 +181,7 @@ function QuestionsEditor({ formData, handleChange }) {
                 </div>
             </div>
             <div className='mt-7'>
-                <div className='flex mb-7 items-center justify-between'>
+                <div className='flex mb-7 items-center justify-between gap-2 flex-wrap'>
                     <h3 className='font-poppins font-500'>{questions.length}/{questions.length} Question(s)</h3>
                     {openItems.length > 0 && (
                         <button
@@ -204,8 +204,8 @@ function QuestionsEditor({ formData, handleChange }) {
                                     value={question.key}
                                     className={`border border-solid rounded p-4 mb-2 ${question.question && !question.answer.text ? 'border-red-700' : ''}`}
                                 >
-                                    <div className='flex items-center justify-between'>
-                                        <div className='flex items-center gap-3'>
+                                    <div className='flex items-center justify-between flex-wrap gap-2'>
+                                        <div className='flex items-center gap-3 mr-3'>
                                             <p className='bg-gray-200 w-8 h-8 px-3 py-2 grid place-content-center text-sm font-600 rounded-md'>{i + 1}</p>
                                             <p className='bg-gray-200 p-2 text-xs font-600 rounded-md'>
                                                 {question?.qType === 'multi-choice' ? 'Multiple Choice' : 'True or False'}
