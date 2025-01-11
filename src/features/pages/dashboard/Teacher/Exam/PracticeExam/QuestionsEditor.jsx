@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom'
 import Papa from 'papaparse'
 import Preview from '../Preview'
 import { CSVFormat, JSONFormat } from './questionFormat'
+import FormatDesc from '../FormatDesc'
 
 function QuestionsEditor({ formData, setStep }) {
 
@@ -488,68 +489,7 @@ function QuestionsEditor({ formData, setStep }) {
                 </div>
             )}
 
-            <div className='fixed bottom-4 right-4'>
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <button
-                            type='button'
-                        >
-                            <ShieldQuestionIcon />
-                        </button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className='px-4 mr-3'>
-                        <DropdownMenuLabel className="p-0 font-normal">
-                            Format
-                        </DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <div className='grid grid-cols-2'>
-                            <button
-                                type='button'
-                                onClick={() => handleSetFormat('csv')}
-                                className='font-poppins text-sm font-600'
-                            >
-                                CSV
-                                {format === 'csv' && <div className='bg-red-400 h-[1px] w-full'></div>}
-                            </button>
-                            <button
-                                type='button'
-                                onClick={() => handleSetFormat('json')}
-                                className='font-poppins text-sm font-600'
-                            >
-                                JSON
-                                {format === 'json' && <div className='bg-red-400 h-[1px] w-full'></div>}
-                            </button>
-                        </div>
-                        {
-                            format === 'json' ? (
-                                <div className="max-w-2xl mx-auto">
-                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800">Sample Dataset</h2>
-                                    <div className="mb-8">
-                                        <h3 className="text-lg font-medium text-gray-700 mb-2">JSON Format</h3>
-                                        <div className="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-auto">
-                                            <pre className="text-sm font-mono">
-                                                {`${JSONFormat()}`}
-                                            </pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            ) : (
-                                <div className="max-w-2xl mx-auto">
-                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800">Sample Dataset</h2>
-                                    <div className="mb-8">
-                                        <h3 className="text-lg font-medium text-gray-700 mb-2">JSON Format</h3>
-                                        <div className="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-auto">
-                                            <pre className="text-sm font-mono">
-                                                {`${CSVFormat()}`}
-                                            </pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        }
-                    </DropdownMenuContent>
-                </DropdownMenu>
-            </div>
+            <FormatDesc format={format} handleSetFormat={handleSetFormat} />
 
             <Preview isModalOpen={isModalOpen} closeModal={closeModal} currentQuestionIndex={currentQuestionIndex} currQue={currQue} preview={preview} setPreview={setPreview} setCurrentQuestionIndex={setCurrentQuestionIndex} />
         </>
