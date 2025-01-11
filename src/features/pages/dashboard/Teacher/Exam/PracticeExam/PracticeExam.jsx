@@ -50,7 +50,7 @@ function PracticeExam() {
     }, []);
 
     return (
-        <section>
+        <section className='w-full'>
             <div className='mt-10 pt-10 himd:mt-20 px-5 pb-5 w-[85%] max-w-[950px] mx-auto shadow'>
                 {step === 1 ? (
                     <>
