@@ -497,7 +497,7 @@ function QuestionsEditor({ formData, setStep }) {
                             <ShieldQuestionIcon />
                         </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className='px-4 mr-14 overflow-scroll'>
+                    <DropdownMenuContent className='px-4 mr-3'>
                         <DropdownMenuLabel className="p-0 font-normal">
                             Format
                         </DropdownMenuLabel>
@@ -520,27 +520,26 @@ function QuestionsEditor({ formData, setStep }) {
                                 {format === 'json' && <div className='bg-red-400 h-[1px] w-full'></div>}
                             </button>
                         </div>
-                        {console.log(questions)}
                         {
                             format === 'json' ? (
-                                <div className="max-w-[30rem] mx-auto">
+                                <div className="max-w-2xl mx-auto">
                                     <h2 className="text-2xl font-semibold mb-4 text-gray-800">Sample Dataset</h2>
                                     <div className="mb-8">
-                                        <h3 className="text-lg font-medium text-gray-700 mb-2">CSV Format</h3>
+                                        <h3 className="text-lg font-medium text-gray-700 mb-2">JSON Format</h3>
                                         <div className="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-auto">
-                                            <pre className="text-sm font-mono max-w-[30rem]">
+                                            <pre className="text-sm font-mono">
                                                 {`${JSONFormat()}`}
                                             </pre>
                                         </div>
                                     </div>
                                 </div>
                             ) : (
-                                <div className="max-w-[30rem] mx-auto">
+                                <div className="max-w-2xl mx-auto">
                                     <h2 className="text-2xl font-semibold mb-4 text-gray-800">Sample Dataset</h2>
                                     <div className="mb-8">
-                                        <h3 className="text-lg font-medium text-gray-700 mb-2">CSV Format</h3>
+                                        <h3 className="text-lg font-medium text-gray-700 mb-2">JSON Format</h3>
                                         <div className="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-auto">
-                                            <pre className="text-sm font-mono max-w-[30rem]">
+                                            <pre className="text-sm font-mono">
                                                 {`${CSVFormat()}`}
                                             </pre>
                                         </div>
