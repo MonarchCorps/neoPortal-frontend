@@ -224,14 +224,16 @@ function EditExamDetails() {
                                 )}
                                 {examDetails?.mode === 'live' && (
                                     <>
-                                        <div className="flex items-center justify-between">
-                                            <div className='flex gap-3 my-6 mb-8'>
+                                        <div className="flex items-center justify-between flex-wrap">
+                                            <div className='flex items-center gap-3'>
                                                 <div className='bg-gray-300 px-3 py-2 rounded-md'>
                                                     <span className='font-mon font-600'>Exam ID: </span>
                                                     <span>{examDetails?.liveId}</span>
                                                 </div>
                                             </div>
-                                            <GenerateUniqueId setFormData={setExamDetails} />
+                                            <div className="mt-5">
+                                                <GenerateUniqueId setFormData={setExamDetails} />
+                                            </div>
                                         </div>
 
                                         <div className='grid grid-cols-2 gap-4'>
