@@ -45,7 +45,6 @@ function QuestionsEditor({ formData, handleChange }) {
 
     const [questions, setQuestions] = useState(defaultOption)
     const [openItems, setOpenItems] = useState([]);
-
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
     const [preview, setPreview] = useState(questions)
     const currQue = preview?.[currentQuestionIndex] || {}
@@ -67,6 +66,9 @@ function QuestionsEditor({ formData, handleChange }) {
     const handleUploadQuestions = useMutation({
         mutationFn: ({ state }) => {
             const result = questions.some(que => !que.answer.text)
+            const startTime = new Date(formData.startTime);
+            const endTime = new Date(formData.endTime);
+
             if (questionsData.length === 1 && questionsData[0].question === '')
                 return toast.error('Fill in a question!')
             else if (result)
@@ -77,7 +79,9 @@ function QuestionsEditor({ formData, handleChange }) {
                 return toast.error('Start time is required')
             else if (!formData.endTime)
                 return toast.error('End time is required')
-            else {
+            else if (startTime > endTime) {
+                return toast.error('Start Time cannot be greater than End Time.');
+            } else {
                 return axiosPrivate.post(`/upload/exam/${auth?._id}`, {
                     questionsData,
                     state,
