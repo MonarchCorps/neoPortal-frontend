@@ -4,7 +4,7 @@ import 'react-quill/dist/quill.snow.css';
 
 const QuillEditor = ({ value, onChange }) => {
     return (
-        <div>
+        <div className="quill-editor-container">
             <ReactQuill
                 value={value}
                 onChange={onChange}
@@ -18,6 +18,7 @@ const QuillEditor = ({ value, onChange }) => {
                         ['blockquote'],
                     ],
                 }}
+                className="ql-container no-wrap-quill"
             />
         </div>
     );

@@ -184,8 +184,8 @@ function QuestionsEditor({ formData, setStep }) {
                                     value={question.key}
                                     className={`border border-solid rounded p-4 mb-2 ${question.question && !question.answer.text ? 'border-red-700' : ''}`}
                                 >
-                                    <div className='flex items-center justify-between'>
-                                        <div className='flex items-center gap-3'>
+                                    <div className='flex items-center justify-between flex-wrap gap-2'>
+                                        <div className='flex items-center gap-3 mr-3'>
                                             <p className='bg-gray-200 w-8 h-8 px-3 py-2 grid place-content-center text-sm font-600 rounded-md'>{i + 1}</p>
                                             <p className='bg-gray-200 p-2 text-xs font-600 rounded-md'>
                                                 {question?.qType === 'multi-choice' ? 'Multiple Choice' : 'True or False'}
@@ -217,10 +217,10 @@ function QuestionsEditor({ formData, setStep }) {
                                             {question?.qOpt.map(opt => {
                                                 return (
                                                     <div key={opt.key}>
-                                                        <div className='flex items-center justify-between mb-2'>
+                                                        <div className='flex items-center justify-between mb-2 flex-wrap gap-2'>
                                                             <h1 className='font-mon font-600 text-sm'>Option {opt.id}</h1>
                                                             <div className='flex items-center gap-4'>
-                                                                <div className='flex items-center gap-2'>
+                                                                <div className='flex items-center gap-4 '>
                                                                     <input
                                                                         type="radio"
                                                                         name={`qAnswer-${question.key}`}

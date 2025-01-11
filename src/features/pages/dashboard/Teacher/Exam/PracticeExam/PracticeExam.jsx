@@ -142,7 +142,7 @@ function PracticeExam() {
                                         )
                                     }
                                 </select>
-                                {auth?.assignedSubject && <p className='text-sm text-red-600 mt-4'>
+                                {auth?.assignedSubject && <p className='text-sm text-red-600 mt-4 mb-2'>
                                     You have been assigned a default subject by your school institute. You can&apos;t change it.
                                     <span className='block text-[#000] font-poppins text-600'>Contact your institute for more details!</span>
                                 </p>}
