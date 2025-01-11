@@ -14,17 +14,26 @@ export const JSONFormat = () => {
     return (
         `
 [
-    {
-        "question": "What is the capital of France?",
-        "options": ["Paris", "London", "Berlin", "Madrid"],
-        "answer": "Paris"
-    },
-    {
-        "question": "Which planet is known as the Red Planet?",
-        "options": ["Mars", "Venus", "Jupiter", "Saturn"],
-        "answer": "Mars"
-    }
+  {
+    "question": "What is 2+2?",
+    "qOpt": [
+      { "id": "A", "text": "3" },
+      { "id": "B", "text": "4" }
+    ],
+    "answer": { "text": "B", "desc": "Correct answer is 4" },
+    "qType": "multi-choice"
+  },
+  {
+    "question": "What is the capital of France?",
+    "qOpt": [
+      { "id": "A", "text": "Paris" },
+      { "id": "B", "text": "London" }
+    ],
+    "answer": { "text": "A", "desc": "Correct answer is Paris" },
+    "qType": "multi-choice"
+  }
 ]
+
     `
     )
 }
