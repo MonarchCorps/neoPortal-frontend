@@ -86,8 +86,8 @@ function GenerateUniqueId({ formData, setFormData, dialogCloseRef }) {
                         <div className='flex items-center justify-center'>
                             <button
                                 type='button'
-                                className={`w-fit bg-[#080808] text-[#fff] font-poppins font-500 py-2 px-3 shadow flex items-center gap-3 border border-solid border-gray-950 rounded-md ${regenerate || !formData.liveId ? 'bg-opacity-75 cursor-default' : ''}`}
-                                disabled={!formData.liveId}
+                                className={`w-fit bg-[#080808] text-[#fff] font-poppins font-500 py-2 px-3 shadow flex items-center gap-3 border border-solid border-gray-950 rounded-md ${regenerate || !formData?.liveId ? 'bg-opacity-75 cursor-default' : ''}`}
+                                disabled={!formData?.liveId}
                                 onClick={() => regenerateLiveId()}
                             >
                                 {regenerate && (
