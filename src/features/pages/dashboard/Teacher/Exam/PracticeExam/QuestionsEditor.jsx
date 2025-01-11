@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ShieldQuestionIcon } from 'lucide-react'
 import QuillEditor from '@/components/QuillEditor'
 import useScrollTop from '@/hooks/useScrollTop'
-import { useEffect, useState } from 'react'
-import { FaAngleDoubleUp, FaDotCircle, FaEye, FaPlusCircle } from 'react-icons/fa'
+import { useEffect, useRef, useState } from 'react'
+import { FaAngleDoubleUp, FaDotCircle, FaEye, FaPlusCircle, FaUpload } from 'react-icons/fa'
 import { FaRegTrashCan } from 'react-icons/fa6'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
@@ -15,7 +15,9 @@ import useAuth from '@/hooks/useAuth'
 import useAxiosPrivate from '@/hooks/useAxiosPrivate'
 import Loading from '@/components/Loaders/Loading'
 import { useNavigate } from 'react-router-dom'
+import Papa from 'papaparse'
 import Preview from '../Preview'
+import { CSVFormat, JSONFormat } from './questionFormat'
 
 function QuestionsEditor({ formData, setStep }) {
 
@@ -24,6 +26,10 @@ function QuestionsEditor({ formData, setStep }) {
     const { scrollTop } = useScrollTop()
     const queryClient = useQueryClient()
     const navigate = useNavigate()
+
+    const [format, setFormat] = useState('csv')
+
+    const csvRef = useRef(null);
 
     const defaultOption = [{
         question: '',
@@ -45,6 +51,8 @@ function QuestionsEditor({ formData, setStep }) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
     const [preview, setPreview] = useState(questions)
     const currQue = preview?.[currentQuestionIndex] || {}
+
+    const [bulkInput, setBulkInput] = useState('');
 
     const questionsData = questions.map(({ question: questionText, qOpt, answer, qType }) => {
         return {
@@ -108,6 +116,117 @@ function QuestionsEditor({ formData, setStep }) {
             answer: { ...q.answer },
         })));
     }, [questions]);
+
+    const handleBulkUpload = () => {
+        try {
+            const parsedQuestions = JSON.parse(bulkInput);
+            if (!Array.isArray(parsedQuestions)) throw new Error('Invalid format: Input must be an array.');
+            const newQuestions = parsedQuestions.map((q) => {
+                const validQType = q.qType === 'multi-choice' || q.qType === 'true-false' ? q.qType : 'multi-choice';
+                return {
+                    ...q,
+                    key: uuidv4(),
+                    qType: validQType,
+                    qOpt: q.qType === 'true-false'
+                        ? [
+                            { key: uuidv4(), id: 'A', text: 'True' },
+                            { key: uuidv4(), id: 'B', text: 'False' },
+                        ]
+                        : q.qOpt.map(opt => ({ ...opt, key: uuidv4() })),
+                    answer: { ...q.answer },
+                };
+            });
+            setQuestions((prev) => [...prev, ...newQuestions]);
+            setBulkInput('');
+            toast.success('Questions uploaded successfully!');
+        } catch (error) {
+            console.error('Error parsing JSON:', error);
+            toast.error('Invalid JSON format.');
+        }
+    };
+
+    const handleCSVUpload = (file) => {
+        Papa.parse(file, {
+            header: true,
+            skipEmptyLines: true,
+            complete: (result) => {
+                try {
+                    const csvQuestions = result.data.map((row) => {
+                        if (!row.Question || !row.OptionA || !row.OptionB || !row.Answer) {
+                            throw new Error('Invalid CSV format. Please ensure all required columns are included.');
+                        }
+
+                        const validQType = row.QuestionType === 'multi-choice' || row.QuestionType === 'true-false'
+                            ? row.QuestionType
+                            : 'multi-choice';
+
+                        return {
+                            question: row.Question,
+                            key: uuidv4(),
+                            qType: validQType,
+                            qOpt: validQType === 'true-false'
+                                ? [
+                                    { key: uuidv4(), id: 'A', text: 'True' },
+                                    { key: uuidv4(), id: 'B', text: 'False' },
+                                ]
+                                : [
+                                    { key: uuidv4(), id: 'A', text: row.OptionA },
+                                    { key: uuidv4(), id: 'B', text: row.OptionB },
+                                    { key: uuidv4(), id: 'C', text: row.OptionC || '' },
+                                    { key: uuidv4(), id: 'D', text: row.OptionD || '' },
+                                ].filter(opt => opt.text),
+                            answer: {
+                                text: row.Answer,
+                                desc: row.Description || '',
+                            },
+                        };
+                    });
+
+                    setQuestions((prev) => [...prev, ...csvQuestions]);
+                    toast.success('CSV uploaded successfully!');
+                } catch (error) {
+                    toast.error(error.message || 'Error parsing CSV file.');
+                }
+            },
+            error: (error) => {
+                toast.error(`CSV upload failed: ${error.message}`);
+            }
+        });
+    };
+
+    const handleFileInput = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            if (file.type === 'application/json') {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    try {
+                        const parsedQuestions = JSON.parse(reader.result);
+                        const validatedQuestions = parsedQuestions.map((q) => ({
+                            ...q,
+                            key: uuidv4(),
+                            qType: q.qType === 'multi-choice' || q.qType === 'true-false' ? q.qType : 'multi-choice',
+                        }));
+                        setQuestions((prev) => [...prev, ...validatedQuestions]);
+                        toast.success('JSON file uploaded successfully!');
+                    } catch (error) {
+                        console.log(error);
+                        toast.error('Invalid JSON file.');
+                    }
+                };
+                reader.readAsText(file);
+            } else if (file.type === 'text/csv') {
+                handleCSVUpload(file);
+            } else {
+                toast.error('Unsupported file format. Please upload a JSON or CSV file.');
+            }
+        }
+    };
+
+    const handleSetFormat = (value) => {
+        setFormat(value);
+    };
+
 
     return (
         <>
@@ -302,6 +421,133 @@ function QuestionsEditor({ formData, setStep }) {
                         <DropdownMenuItem className='cursor-pointer' onClick={() => handleAddQuestion('true-false', setQuestions)}>
                             True or False
                         </DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+            </div>
+
+            <div className='text-center my-4 '>
+                <h1 className='mb-2 font-600 font-poppins'>Bulk Upload</h1>
+                <div className='flex w-full items-center justify-center gap-3'>
+                    <button
+                        type='button'
+                        className={`border border-solid border-gray-600 text-gray-600 shadow-sm p-3 font-mon font-600 text-sm rounded-md flex items-center gap-2 text-nowrap transition-all duration-300 ${format === 'json' ? 'bg-opacity-50 bg-gray-600' : 'hover:bg-gray-600 hover:text-[#eee]'}`}
+                        onClick={() => handleSetFormat('json')}
+                        disabled={format === 'json'}
+                    >
+                        JSON Format
+                    </button>
+                    <button
+                        type='button'
+                        className={`border border-solid border-gray-600 text-gray-600 shadow-sm p-3 font-mon font-600 text-sm rounded-md flex items-center gap-2 text-nowrap transition-all duration-300 ${format === 'csv' ? 'bg-opacity-50 bg-gray-600' : 'hover:bg-gray-600 hover:text-[#eee]'}`}
+                        onClick={() => handleSetFormat('csv')}
+                        disabled={format === 'csv'}
+                    >
+                        CSV Format
+                    </button>
+                </div>
+            </div>
+
+            {format === 'json' ? (
+                <div className='mt-7'>
+                    <h3 className='font-poppins font-500 mb-1'>JSON Upload</h3>
+                    <div className='flex items-center gap-3 mt-4 himd:flex-wrap'>
+                        <button
+                            className='border border-solid border-gray-600 text-gray-600 shadow-sm p-3 font-mon font-600 text-sm rounded-md transition-all duration-300 hover:bg-gray-600 hover:text-[#eee] flex items-center gap-2 text-nowrap'
+                            onClick={handleBulkUpload}
+                        >
+                            Upload
+                        </button>
+                        <textarea
+                            className='border border-gray-400 p-2 rounded-md w-full max-h-32 min-h-24'
+                            value={bulkInput}
+                            onChange={(e) => setBulkInput(e.target.value)}
+                            placeholder='Paste questions in JSON format here...'
+                        />
+                    </div>
+                </div>
+            ) : (
+                <div className="my-3 mt-7">
+                    <h3 className='font-poppins font-500 mb-2'>CSV Upload</h3>
+                    <input
+                        type="file"
+                        accept=".json, .csv"
+                        onChange={handleFileInput}
+                        className="mb-2"
+                        hidden
+                        ref={csvRef}
+                    />
+                    <button
+                        type='button'
+                        className='border border-solid border-gray-600 text-gray-600 shadow-sm p-3 font-mon font-600 text-sm rounded-md transition-all duration-300 hover:bg-gray-600 hover:text-[#eee] flex items-center gap-2 text-nowrap'
+                        onClick={() => csvRef.current?.click()}
+
+                    >
+                        <FaUpload />
+                        Upload From File
+                    </button>
+                </div>
+            )}
+
+            <div className='fixed bottom-4 right-4'>
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <button
+                            type='button'
+                        >
+                            <ShieldQuestionIcon />
+                        </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className='px-4 mr-14 overflow-scroll'>
+                        <DropdownMenuLabel className="p-0 font-normal">
+                            Format
+                        </DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <div className='grid grid-cols-2'>
+                            <button
+                                type='button'
+                                onClick={() => handleSetFormat('csv')}
+                                className='font-poppins text-sm font-600'
+                            >
+                                CSV
+                                {format === 'csv' && <div className='bg-red-400 h-[1px] w-full'></div>}
+                            </button>
+                            <button
+                                type='button'
+                                onClick={() => handleSetFormat('json')}
+                                className='font-poppins text-sm font-600'
+                            >
+                                JSON
+                                {format === 'json' && <div className='bg-red-400 h-[1px] w-full'></div>}
+                            </button>
+                        </div>
+                        {console.log(questions)}
+                        {
+                            format === 'json' ? (
+                                <div className="max-w-[30rem] mx-auto">
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800">Sample Dataset</h2>
+                                    <div className="mb-8">
+                                        <h3 className="text-lg font-medium text-gray-700 mb-2">CSV Format</h3>
+                                        <div className="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-auto">
+                                            <pre className="text-sm font-mono max-w-[30rem]">
+                                                {`${JSONFormat()}`}
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="max-w-[30rem] mx-auto">
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800">Sample Dataset</h2>
+                                    <div className="mb-8">
+                                        <h3 className="text-lg font-medium text-gray-700 mb-2">CSV Format</h3>
+                                        <div className="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-auto">
+                                            <pre className="text-sm font-mono max-w-[30rem]">
+                                                {`${CSVFormat()}`}
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        }
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
