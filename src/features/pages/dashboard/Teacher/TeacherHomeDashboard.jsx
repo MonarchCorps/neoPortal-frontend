@@ -76,7 +76,7 @@ function TeacherHomeDashboard() {
 
     return (
         <section>
-            <div className='w-full'>
+            <div className='w-full overflow-x-scroll'>
                 <div className='absolute right-0 left-0 h-[19rem] -z-20'>
                     <img
                         src={bgImg}
@@ -120,10 +120,12 @@ function TeacherHomeDashboard() {
                         <UserDetails user={auth} />
                     )}
                     {data?.length > 0 ? (
-                        <div className="mt-10 w-screen min-w-[60rem]">
-                            <h1 className='mb-7 text-slate-950 text-3xl'>Uploaded Exams</h1>
-                            <TableHead />
-                            <TableBody details={filteredData} page={{ page: page, n: n }} />
+                        <div className='overflow-x-scroll'>
+                            <div className="mt-10 w-screen min-w-[60rem]">
+                                <h1 className='mb-7 text-slate-950 text-3xl'>Uploaded Exams</h1>
+                                <TableHead />
+                                <TableBody details={filteredData} page={{ page: page, n: n }} />
+                            </div>
                         </div>
                     ) : (
                         <p className='w-full text-center my-3'>No uploaded exams available at the moment! Check back later or reload the page.</p>

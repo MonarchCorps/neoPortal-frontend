@@ -97,15 +97,15 @@ function UploadedExams() {
         <>
             <Loading text={` ${handleUpdateExam.isPending ? 'Updating exam' : handleDeleteExam.isPending && 'Deleting exam'}`} isLoading={handleUpdateExam.isPending || handleDeleteExam.isPending} />
             <section>
-                <div className='mt-10 pt-10 px-5 pb-5 w-[85%] max-w-[1000px] mx-auto shadow overflow-x-scroll'>
+                <div className='mt-10 pt-10 px-5 pb-5 w-[85%] max-w-[1000px] mx-auto shadow'>
                     <h1 className="font-poppins font-600 text-red-950 text-3xl cfsm:text-xl mb-1">Exam Management</h1>
                     <p className="text-sm font-poppins cfsm:text-xs">Here, you can see a list of all uploaded exams you have made!</p>
                     <div className="flex justify-between items-center flex-wrap mt-7 gap-3">
                         <h1 className="text-xl font-600 mr-5">
                             Uploaded Exams {data?.length}
                         </h1>
-                        <div className="flex items-center gap-3">
-                            <div className="flex border border-solid rounded-md shadow-sm overflow-hidden px-2 py-2 col-span-2 w-96">
+                        <div className="flex items-center gap-3 flex-wrap">
+                            <div className="flex border border-solid rounded-md shadow-sm overflow-hidden px-2 py-2 col-span-2 w-96 esm:w-full">
                                 <Search className="rotate-90 text-slate-500" />
                                 <input
                                     type="text"
@@ -132,9 +132,11 @@ function UploadedExams() {
                     </div>
                     <Loading2 text='Loading' data='document' isLoading={isLoading} className='mt-8 bg-red-950 text-slate-50 font-mon font-600 text-base px-3 py-2 rounded-sm' />
                     {!isLoading && data?.length > 0 ? (
-                        <div className="mt-10 mb-20 xl:w-screen min-w-[60rem]">
-                            <TableHead />
-                            <TableBody details={filteredData} handleUpdateExam={handleUpdateExam} handleDeleteExam={handleDeleteExam} page={{ page: page, n: n }} />
+                        <div className="overflow-x-scroll w-full">
+                            <div className="mt-10 mb-20 xl:w-screen min-w-[60rem]">
+                                <TableHead />
+                                <TableBody details={filteredData} handleUpdateExam={handleUpdateExam} handleDeleteExam={handleDeleteExam} page={{ page: page, n: n }} />
+                            </div>
                         </div>
                     ) : !isLoading && (
                         <p className="mt-12 mb-5 w-full text-center">No uploaded exams check back later or reload page</p>
