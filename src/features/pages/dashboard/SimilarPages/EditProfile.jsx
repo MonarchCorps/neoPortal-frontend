@@ -104,6 +104,7 @@ function EditProfile() {
                                 hidden
                                 multiple={false}
                                 onChange={handleChange}
+                                accept='image/*'
                             />
                             {
                                 auth?.profileImage?.url || preview ? (
