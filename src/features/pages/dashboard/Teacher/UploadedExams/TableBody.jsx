@@ -1,12 +1,11 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CiMenuKebab } from 'react-icons/ci'
 import { FaEdit, FaTrash } from 'react-icons/fa'
 import { FaArrowsToEye } from 'react-icons/fa6'
 import { DeleteCancelButton, DeleteConfirmButton, DeleteModal } from '@/components/Modal/DeleteModal'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
 import useScrollTop from '@/hooks/useScrollTop'
 import trim from '@/utils/trim'
 import { BookLock } from 'lucide-react'
@@ -40,14 +39,11 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
                                     detail?.state === 'published' ? 'Published' : 'Saved'
                                 }
                             </p>
+
                             {pathAfterSlash !== 'teacher' && (
-                                <HoverCard openDelay={20} closeDelay={20}>
-                                    <HoverCardTrigger asChild>
-                                        <div className='flex justify-end items-center group'>
-                                            <CiMenuKebab className='cursor-pointer' />
-                                        </div>
-                                    </HoverCardTrigger>
-                                    <HoverCardContent className="p-0 absolute -right-4 top-0 rounded-none border border-solid border-slate-400">
+                                <div className="relative flex justify-end items-center group w-fit rounded-full">
+                                    <CiMenuKebab className='cursor-pointer' />
+                                    <div className="group-hover:flex hidden flex-col absolute right-0 top-6 bg-white shadow-lg border border-gray-300 rounded-lg z-10 min-w-56 overflow-hidden">
                                         <ul>
                                             <Link to={`${detail?._id}/edit`} className='cursor-pointer font-400 hover:bg-[#f2f2f2] pl-5 hover:font-500 py-2 grid grid-flow-col justify-start items-center gap-3 select-none' onClick={scrollTop}>
                                                 <span className='text-[#6a6767]'>
@@ -144,8 +140,8 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
                                                 </div>
                                             </li>
                                         </ul>
-                                    </HoverCardContent>
-                                </HoverCard>
+                                    </div>
+                                </div>
                             )}
                         </div>
                     )
