@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { ArrowLeft, ShieldQuestionIcon } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import QuillEditor from '@/components/QuillEditor'
 import useScrollTop from '@/hooks/useScrollTop'
 import { useEffect, useRef, useState } from 'react'
@@ -17,7 +17,6 @@ import Loading from '@/components/Loaders/Loading'
 import { useNavigate } from 'react-router-dom'
 import Papa from 'papaparse'
 import Preview from '../Preview'
-import { CSVFormat, JSONFormat } from './questionFormat'
 import FormatDesc from '../FormatDesc'
 
 function QuestionsEditor({ formData, setStep }) {
