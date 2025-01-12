@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { isTokenExpired } from "@/utils/isTokenExpired";
 import useModal from "@/hooks/useModal";
 import useAxiosPrivate from "@/hooks/useAxiosPrivate";
 
