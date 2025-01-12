@@ -2,29 +2,34 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { isTokenExpired } from "@/utils/isTokenExpired";
 import useModal from "@/hooks/useModal";
+import useAxiosPrivate from "@/hooks/useAxiosPrivate";
 
-const protectedRoutes = ["/dashboard", "/cbt-practice", "/saved-questions"]; // Add your protected routes here.
+const protectedRoutes = ["/dashboard", "/cbt-practice", "/saved-questions"];
 
 const TokenExpiryWatcher = ({ children }) => {
     const { showModal, hideModal } = useModal()
     const location = useLocation();
+    const axiosPrivate = useAxiosPrivate()
 
     useEffect(() => {
-        const token = JSON.parse(localStorage.getItem("neoPortal_auth_token"))?.accessToken;
         const isProtectedRoute = protectedRoutes.some((route) =>
             location.pathname.startsWith(route)
         );
 
         if (isProtectedRoute) {
-            if (isTokenExpired(token)) {
-                showModal();
-            } else {
-                hideModal();
-            }
+            axiosPrivate.get('/check-token')
+                .then(response => {
+                    hideModal()
+                })
+                .catch(error => {
+                    if (error.response && error.response.data.message === 'Token expired') {
+                        showModal()
+                    }
+                });
         } else {
             hideModal();
         }
-    }, [location, showModal, hideModal]);
+    }, [axiosPrivate, hideModal, location.pathname, showModal]);
 
     return children;
 };
