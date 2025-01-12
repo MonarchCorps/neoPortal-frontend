@@ -231,7 +231,7 @@ function QuestionsEditor({ formData, setStep }) {
     return (
         <>
             <Loading isLoading={handleUploadQuestions.isPending} text='Uploading questions' />
-            <div className='fixed top-4 left-1/2 -translate-x-1/2 bg-[#100e0e] text-[#fff] px-3 py-2 rounded-md shadow  flex items-center himd:flex-col'>
+            <div className='fixed top-4 left-1/2 -translate-x-1/2 bg-[#100e0e] text-[#fff] px-3 py-2 rounded-md shadow z-[10] flex items-center himd:flex-col'>
                 <div className='himd:text-nowrap'>
                     Save your data to avoid losing it!&nbsp;
                 </div>

@@ -43,7 +43,7 @@ function GenerateUniqueId({ formData, setFormData, dialogCloseRef }) {
         <Dialog>
             <DialogTrigger asChild>
                 <div className='flex justify-end'>
-                    <Button className='font-sans mb-6'>
+                    <Button className='font-sans mb-6 text-wrap'>
                         <span><FaPlus /></span>
                         <span>Generate Unique Exam Id</span>
                     </Button>

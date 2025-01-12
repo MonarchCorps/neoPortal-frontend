@@ -137,24 +137,26 @@ function EditExamDetails() {
             <Loading isLoading={handleEditExamDetails.isPending} text='Updating questions' />
 
             <section>
-                <div className='mt-10 pt-10 px-5 pb-5 w-[85%] max-w-[1000px] mx-auto shadow'>
+                <div className='mt-10 pt-10 px-5 pb-5 w-[85%] max-w-[1000px] mx-auto shadow fxsm:mt-20'>
                     {isLoading ? (
                         <Loading2 text='Loading' data='document' isLoading={isLoading} className='my-8 bg-red-950 text-slate-50 font-mon font-600 text-base px-3 py-2 rounded-sm' />
                     ) : !isLoading && examDetails?._id
                         ? (
                             <>
-                                <div className='fixed top-4 left-1/2 -translate-x-1/2 bg-[#100e0e] text-[#fff] px-3 py-2 rounded-md shadow z-[400]'>
-                                    Save your data to avoid losing it!&nbsp;
-                                    <button
-                                        type='button'
-                                        className='bg-[#fff] text-[#100e0e] px-3 py-2 rounded-xl font-mon font-500 text-sm mx-2'
-                                        onClick={() => handleEditExamDetails.mutate({ state: 'published' })}
-                                    >
-                                        Save
-                                    </button>
+                                <div className="fixed top-10 left-1/2 -translate-x-1/2 text-nowrap asm:text-wrap asm:left-0 asm:-translate-x-0 right-0 grid place-content-center h-fit z-[10]">
+                                    <div className='axsm:mx-10 bg-[#100e0e] text-[#fff] px-3 py-2 rounded-md shadow text-center'>
+                                        Save your data to avoid losing it!&nbsp;
+                                        <button
+                                            type='button'
+                                            className='bg-[#fff] text-[#100e0e] px-3 py-2 rounded-xl font-mon font-500 text-sm mx-2'
+                                            onClick={() => handleEditExamDetails.mutate({ state: 'published' })}
+                                        >
+                                            Save
+                                        </button>
+                                    </div>
                                 </div>
                                 <div className='col-span-2 flex items-center gap-5 mb-3'>
-                                    <div className='w-full flex items-center justify-between'>
+                                    <div className='w-full flex items-center justify-between fxsm:flex-col fxsm:items-start fxsm:gap-2'>
                                         <div className='flex items-center'>
                                             <h1 className='font-mon text-slate-950 font-600 text-3xl'>Edit Details</h1>
                                         </div>
@@ -169,7 +171,7 @@ function EditExamDetails() {
                                 </div>
                                 {examDetails?.mode !== 'live' && (
                                     <>
-                                        <div className='flex gap-3 my-6 mb-8'>
+                                        <div className='flex flex-wrap gap-3 my-6 mb-8'>
                                             <select
                                                 name="examType"
                                                 id="examType"
@@ -202,7 +204,7 @@ function EditExamDetails() {
                                             <select
                                                 name="subject"
                                                 id="subject"
-                                                className=" p-2 font-karla outline-none border border-solid bg-gray-50 px-3 py-2 rounded-md text-center"
+                                                className=" p-2 font-karla outline-none border border-solid bg-gray-50 px-3 py-2 rounded-md text-center hxsm:max-w-full"
                                                 onChange={(e) => handleChange(e, setExamDetails)}
                                                 value={examDetails?.subject}
                                             >
@@ -215,7 +217,7 @@ function EditExamDetails() {
                                             </select>
 
                                         </div>
-                                        <div className='flex gap-3 my-6 mb-8'>
+                                        <div className='flex gap-3 my-6 mb-8 flex-wrap'>
                                             <div className='bg-gray-300 px-3 py-2 rounded-md'>{examDetails?.examType}</div>
                                             <div className='bg-gray-300 px-3 py-2 rounded-md'>{examDetails?.examYear}</div>
                                             <div className='bg-gray-300 px-3 py-2 rounded-md'>{examDetails?.subject}</div>
@@ -224,7 +226,7 @@ function EditExamDetails() {
                                 )}
                                 {examDetails?.mode === 'live' && (
                                     <>
-                                        <div className="flex items-center justify-between flex-wrap">
+                                        <div className="flex flex-wrap items-center justify-between">
                                             <div className='flex items-center gap-3'>
                                                 <div className='bg-gray-300 px-3 py-2 rounded-md'>
                                                     <span className='font-mon font-600'>Exam ID: </span>
@@ -236,7 +238,7 @@ function EditExamDetails() {
                                             </div>
                                         </div>
 
-                                        <div className='grid grid-cols-2 gap-4'>
+                                        <div className='grid grid-cols-2 cfsm:grid-cols-1 gap-4'>
                                             <div>
                                                 <p className='font-mon font-600 mb-2'>Start Time</p>
                                                 <input
@@ -264,7 +266,7 @@ function EditExamDetails() {
                                     </>
                                 )}
                                 <div className='mt-7'>
-                                    <div className='flex mb-7 items-center justify-between'>
+                                    <div className='flex mb-7 items-center justify-between flex-wrap gap-2'>
                                         <h3 className='font-poppins font-500'>{examDetails?.questionsData?.length}/{examDetails?.questionsData?.length} Question(s)</h3>
                                         {openItems.length > 0 && (
                                             <button
@@ -287,15 +289,15 @@ function EditExamDetails() {
                                                         value={question?.key}
                                                         className={`border border-solid rounded p-4 mb-2 ${question?.question && !question?.answer.text ? 'border-red-700' : ''}`}
                                                     >
-                                                        <div className='flex items-center justify-between'>
-                                                            <div className='flex items-center gap-3'>
+                                                        <div className='flex items-center justify-between flex-wrap gap-2'>
+                                                            <div className='flex items-center gap-3 mr-3'>
                                                                 <p className='bg-gray-200 w-8 h-8 px-3 py-2 grid place-content-center text-sm font-600 rounded-md'>{i + 1}</p>
                                                                 <p className='bg-gray-200 p-2 text-xs font-600 rounded-md'>
                                                                     {question?.qType === 'multi-choice' ? 'Multiple Choice' : 'True or False'}
                                                                 </p>
                                                             </div>
                                                             <div className='flex items-center justify-between gap-2'>
-                                                                {question?.question && !question?.answer.text && (
+                                                                {question.question && !question.answer.text && (
                                                                     <p className='bg-red-600 text-[#fff] font-mon font-600 px-2 rounded-md text-sm'>Please select an answer</p>
                                                                 )}
                                                                 {i + 1 !== 1 && (<button onClick={() => handleRemoveQuestion(question.key, setExamDetails)} className='text-red-600 p-3 bg-red-500 bg-opacity-15 border border-red-500 rounded-md transition-all duration-200 hover:bg-opacity-100 hover:text-[#eeeded]'>
@@ -320,10 +322,10 @@ function EditExamDetails() {
                                                                 {question?.qOpt.map(opt => {
                                                                     return (
                                                                         <div key={opt.key}>
-                                                                            <div className='flex items-center justify-between mb-2'>
+                                                                            <div className='flex items-center justify-between mb-2 flex-wrap gap-2'>
                                                                                 <h1 className='font-mon font-600 text-sm'>Option {opt.id}</h1>
                                                                                 <div className='flex items-center gap-4'>
-                                                                                    <div className='flex items-center gap-2'>
+                                                                                    <div className='flex items-center gap-1'>
                                                                                         <input
                                                                                             type="radio"
                                                                                             name={`qAnswer-${question.key}`}
