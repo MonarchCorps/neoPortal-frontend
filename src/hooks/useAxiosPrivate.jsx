@@ -23,6 +23,7 @@ const useAxiosPrivate = () => {
             (response) => response,
             async (error) => {
                 const prevRequest = error?.config;
+
                 if (error?.response?.status === 403 && !prevRequest?.sent) {
                     prevRequest.sent = true;
                     try {
@@ -33,11 +34,17 @@ const useAxiosPrivate = () => {
                         return axiosPrivate(prevRequest);
                     } catch (refreshError) {
                         console.error(refreshError);
+                        if (refreshError.response?.status === 401) {
+                            setAuth({});
+                            localStorage.removeItem("neoPortal_auth_token");
+                        }
                     }
                 }
+
                 return Promise.reject(error);
             }
         );
+
 
         return () => {
             axiosPrivate.interceptors.request.eject(requestIntercept);

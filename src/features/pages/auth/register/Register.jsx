@@ -10,11 +10,11 @@ import useAuth from '@/hooks/useAuth'
 import toast from 'react-hot-toast'
 import Loading from '@/components/Loaders/Loading'
 import useHideScroll from '@/hooks/useHideScroll'
+import useModal from '@/hooks/useModal'
 
 function Register() {
-
     const { setAuth } = useAuth()
-
+    const { hideModal } = useModal()
     const location = useLocation()
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/';
@@ -79,6 +79,7 @@ function Register() {
                 licenseNo: '',
                 role: ''
             })
+            hideModal()
             navigate(from, {
                 replace: true
             });

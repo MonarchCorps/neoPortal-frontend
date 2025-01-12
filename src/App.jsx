@@ -37,6 +37,7 @@ import TeacherLiveExamPage from './features/pages/dashboard/Teacher/Exam/LiveExa
 import MonitorStudents from './features/pages/dashboard/Teacher/Monitor/MonitorStudents'
 import SchoolHomeDashboard from './features/pages/dashboard/School/SchoolHomeDashboard'
 import SavedQuestions from './components/SavedQuestions'
+import PersistentModal from './components/PersistentModal'
 
 function ProtectedSubjectRoute({ children }) {
 	const { subject } = useParams();
@@ -57,7 +58,6 @@ function ProtectedQuestionRoute({ children }) {
 	return children;
 }
 
-
 function App() {
 
 	const { auth } = useAuth()
@@ -74,7 +74,6 @@ function App() {
 				return '/auth'
 		}
 	}
-
 
 	return (
 		<>
@@ -160,6 +159,8 @@ function App() {
 				<Route path='*' element={<NotFound />} />
 
 			</Routes>
+
+			<PersistentModal />
 			<Toaster
 				position="bottom-center"
 				reverseOrder={false}
