@@ -97,7 +97,7 @@ function UploadedExams() {
         <>
             <Loading text={` ${handleUpdateExam.isPending ? 'Updating exam' : handleDeleteExam.isPending && 'Deleting exam'}`} isLoading={handleUpdateExam.isPending || handleDeleteExam.isPending} />
             <section>
-                <div className='mt-10 pt-10 px-5 pb-5 w-[85%] max-w-[1000px] mx-auto shadow overflow-visible'>
+                <div className='mt-10 pt-10 px-5 pb-5 w-[85%] max-w-[1000px] mx-auto shadow overflow-x-scroll'>
                     <h1 className="font-poppins font-600 text-red-950 text-3xl cfsm:text-xl mb-1">Exam Management</h1>
                     <p className="text-sm font-poppins cfsm:text-xs">Here, you can see a list of all uploaded exams you have made!</p>
                     <div className="flex justify-between items-center flex-wrap mt-7 gap-3">
