@@ -42,7 +42,7 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
 
                             {pathAfterSlash !== 'teacher' && (
                                 <div className="relative flex justify-end items-center group w-fit rounded-full">
-                                    <CiMenuKebab className='cursor-pointer' />
+                                    <CiMenuKebab className='cursor-pointer  ml-3' />
                                     <div className="group-hover:flex hidden flex-col absolute right-0 top-6 bg-white shadow-lg border border-gray-300 rounded-lg z-10 min-w-56 overflow-hidden">
                                         <ul>
                                             <Link to={`${detail?._id}/edit`} className='cursor-pointer font-400 hover:bg-[#f2f2f2] pl-5 hover:font-500 py-2 grid grid-flow-col justify-start items-center gap-3 select-none' onClick={scrollTop}>
@@ -64,11 +64,11 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
                                                     <DialogHeader>
                                                         <DialogTitle>
                                                             <BookLock className='w-full text-center mb-2 mt-1' />
-                                                            <p>
+                                                            <p className='text-center'>
                                                                 Change Visibility
                                                             </p>
                                                         </DialogTitle>
-                                                        <DialogDescription className='text-red-600'>
+                                                        <DialogDescription className='text-red-600 text-center'>
                                                             You agree to make this exam {detail?.state === 'saved' ? (
                                                                 <button
                                                                     type='button'
