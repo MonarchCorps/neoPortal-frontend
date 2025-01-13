@@ -20,6 +20,7 @@ function UploadedExams() {
     // const [startDate, setStartDate] = useState(new Date());
     // const [endDate, setEndDate] = useState(new Date());
     // const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible()
+    const [searchItem, setSearchItem] = useState('')
 
     const queryClient = useQueryClient()
 
@@ -93,6 +94,24 @@ function UploadedExams() {
         }
     }, [data, page])
 
+    const handleFilter = () => {
+        if (data) {
+            const updatedData = data?.filter(data =>
+                data?.examYear &&
+                data?.examType &&
+                data?.subject &&
+                data?.mode &&
+                (
+                    data.examYear.toLowerCase().includes(searchItem.toLowerCase().trim()) ||
+                    data.examType.toLowerCase().includes(searchItem.toLowerCase().trim()) ||
+                    data.subject.toLowerCase().includes(searchItem.toLowerCase().trim()) ||
+                    data.mode.toLowerCase().includes(searchItem.toLowerCase().trim())
+                )
+            );
+            setFilteredData(updatedData);
+        }
+    };
+
     return (
         <>
             <Loading text={` ${handleUpdateExam.isPending ? 'Updating exam' : handleDeleteExam.isPending && 'Deleting exam'}`} isLoading={handleUpdateExam.isPending || handleDeleteExam.isPending} />
@@ -113,6 +132,8 @@ function UploadedExams() {
                                     id="search"
                                     className="outline-none ml-3 w-full"
                                     placeholder="Search..."
+                                    onChange={(e) => setSearchItem(e.target.value)}
+                                    value={searchItem}
                                 />
                             </div>
                             <div className="relative">
@@ -120,9 +141,9 @@ function UploadedExams() {
                                     type="button"
                                     id="openButton"
                                     className="bg-[#1b1a1a] text-[#fff] font-poppins font-600 w-32 py-3 rounded-lg text-base shadow border border-solid border-current transition-all duration-300 hover:border-[#1b1a1a] hover:bg-gray-50 hover:text-[#1b1a1a]"
-                                // onClick={() => {
-                                //     setIsComponentVisible(!isComponentVisible)
-                                // }}
+                                    onClick={() => {
+                                        handleFilter()
+                                    }}
                                 >
                                     Search
                                 </button>
