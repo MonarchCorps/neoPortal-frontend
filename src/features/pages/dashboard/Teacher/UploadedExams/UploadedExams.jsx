@@ -6,8 +6,8 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { Search } from "lucide-react"
 import TableHead from "./TableHead"
 import TableBody from "./TableBody"
-import useComponentVisible from "@/hooks/useComponentVisible"
-import Filter from "@/components/Filter"
+// import useComponentVisible from "@/hooks/useComponentVisible"
+// import Filter from "@/components/Filter"
 import Loading from "@/components/Loaders/Loading"
 import toast from "react-hot-toast"
 import ReactPaginate from "react-paginate"
@@ -17,9 +17,9 @@ function UploadedExams() {
 
     const { auth } = useAuth()
     const axiosPrivate = useAxiosPrivate()
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
-    const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible()
+    // const [startDate, setStartDate] = useState(new Date());
+    // const [endDate, setEndDate] = useState(new Date());
+    // const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible()
 
     const queryClient = useQueryClient()
 
@@ -68,16 +68,16 @@ function UploadedExams() {
         }
     })
 
-    const handleSelect = (date) => {
-        setStartDate(date.selection.startDate);
-        setEndDate(date.selection.endDate);
-    }
+    // const handleSelect = (date) => {
+    //     setStartDate(date.selection.startDate);
+    //     setEndDate(date.selection.endDate);
+    // }
 
-    const selectionRange = {
-        startDate,
-        endDate,
-        key: 'selection',
-    }
+    // const selectionRange = {
+    //     startDate,
+    //     endDate,
+    //     key: 'selection',
+    // }
 
     const [page, setPage] = useState(0);
     const [filteredData, setFilteredData] = useState([]);
@@ -120,13 +120,13 @@ function UploadedExams() {
                                     type="button"
                                     id="openButton"
                                     className="bg-[#1b1a1a] text-[#fff] font-poppins font-600 w-32 py-3 rounded-lg text-base shadow border border-solid border-current transition-all duration-300 hover:border-[#1b1a1a] hover:bg-gray-50 hover:text-[#1b1a1a]"
-                                    onClick={() => {
-                                        setIsComponentVisible(!isComponentVisible)
-                                    }}
+                                // onClick={() => {
+                                //     setIsComponentVisible(!isComponentVisible)
+                                // }}
                                 >
-                                    Filter
+                                    Search
                                 </button>
-                                <Filter isOpen={isComponentVisible} ref={ref} selectionRange={selectionRange} handleSelect={handleSelect} />
+                                {/* <Filter isOpen={isComponentVisible} ref={ref} selectionRange={selectionRange} handleSelect={handleSelect} /> */}
                             </div>
                         </div>
                     </div>
