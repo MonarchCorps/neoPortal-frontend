@@ -78,7 +78,7 @@ function MonitorStudents() {
                                 })}
                             </div>
                         </div>
-                    ) : (
+                    ) : !handleFetchParticipants.isPending && participants?.length === 0 && (
                         <p className="mt-12 mb-5 w-full text-center">No participants found check back later or retry</p>
                     )}
                 </div>
