@@ -52,7 +52,7 @@ function MonitorStudents() {
                     </div>
                     <Loading2 text='Loading' data='document' isLoading={handleFetchParticipants.isPending} className='mt-8 bg-red-950 text-slate-50 font-mon font-600 text-base px-3 py-2 rounded-sm' />
                     {!handleFetchParticipants.isPending && participants?.length > 0 ? (
-                        <div className="w-full overflow-scroll px-10">
+                        <div className="w-full overflow-scroll px-5">
                             <div className="eumd:min-w-[50rem] mx-auto">
                                 <div className="grid grid-cols-4 bg-[#f2f2f281] px-6 py-[0.9rem] rounded-xl my-5">
                                     <div className='grid grid-cols-[40px,1fr] gap-4'>
