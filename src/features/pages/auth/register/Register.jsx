@@ -50,7 +50,6 @@ function Register() {
             return navigate(`/register`)
     }, [])
 
-
     const handleRegister = useMutation({
         mutationFn: (e) => {
             e.preventDefault()
