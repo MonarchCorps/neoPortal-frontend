@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Header from '@/components/partials/Header/Header'
 import RegisterCards from './RegisterCards'
 import RegisterForm from './RegisterForm'
@@ -11,12 +11,14 @@ import toast from 'react-hot-toast'
 import Loading from '@/components/Loaders/Loading'
 import useHideScroll from '@/hooks/useHideScroll'
 import useModal from '@/hooks/useModal'
+import useScrollTop from '@/hooks/useScrollTop'
 
 function Register() {
     const { setAuth } = useAuth()
     const { hideModal } = useModal()
     const location = useLocation()
     const navigate = useNavigate()
+    const { scrollTop } = useScrollTop()
     const from = location.state?.from?.pathname || '/';
 
     const queryParams = new URLSearchParams(location.search);
@@ -102,6 +104,7 @@ function Register() {
                         <div className='grid grid-cols-2 lg:grid-cols-1 place-content-center relative pt-[5rem] h-full'>
                             <div className='mb-4'>
                                 <RegisterForm persona={persona} formData={formData} setFormData={setFormData} handleChange={handleChange} handleRegister={handleRegister} />
+                                <p className='w-full text-center'>Already have an account? <Link to='/auth' className='underline hover:text-red-700' onClick={scrollTop}>Login</Link></p>
                             </div>
                             <div className='lg:hidden'>
                                 <AuthSwiper />

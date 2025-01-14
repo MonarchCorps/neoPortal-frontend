@@ -3,19 +3,21 @@ import Loading from '@/components/Loaders/Loading'
 import Header from '@/components/partials/Header/Header'
 import LoginForm from './LoginForm'
 import AuthSwiper from '../AuthSwiper'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import useAuth from '@/hooks/useAuth'
 import useHideScroll from '@/hooks/useHideScroll'
 import { useMutation } from '@tanstack/react-query'
 import axios from '@/api/axios'
 import toast from 'react-hot-toast'
 import useModal from '@/hooks/useModal'
+import useScrollTop from '@/hooks/useScrollTop'
 
 function Login() {
     const { setAuth } = useAuth()
     const { hideModal } = useModal()
     const location = useLocation()
     const navigate = useNavigate()
+    const { scrollTop } = useScrollTop()
     const from = location.state?.from?.pathname || '/';
 
     const [formData, setFormData] = useState({
@@ -73,8 +75,14 @@ function Login() {
                     <div className='grid grid-cols-2 hrmd2:grid-cols-1 h-screen min-h-[40rem] relative'>
                         <div className='flex flex-col items-center justify-center size-full'>
                             <LoginForm formData={formData} handleChange={handleChange} handleLogin={handleLogin} />
+                            <div>
+                                <Link to='/forget-password' className='hover:underline text-center'>
+                                    Forget Password?
+                                </Link>
+                                <p className='w-full text-center'>Don&apos;t have an account? <Link to='/register' className='underline hover:text-red-700' onClick={scrollTop}>Register</Link></p>
+                            </div>
                         </div>
-                        <div className=' hrmd2:hidden'>
+                        <div className='hrmd2:hidden'>
                             <AuthSwiper />
                         </div>
                     </div>
