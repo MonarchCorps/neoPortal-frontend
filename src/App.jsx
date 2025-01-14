@@ -38,6 +38,8 @@ import MonitorStudents from './features/pages/dashboard/Teacher/Monitor/MonitorS
 import SchoolHomeDashboard from './features/pages/dashboard/School/SchoolHomeDashboard'
 import SavedQuestions from './components/SavedQuestions'
 import PersistentModal from './components/PersistentModal'
+import ForgetPassword from './components/ForgetPassword'
+import ResetPassword from './components/ResetPassword'
 
 function ProtectedSubjectRoute({ children }) {
 	const { subject } = useParams();
@@ -153,6 +155,9 @@ function App() {
 					</Route>
 
 				</Route>
+
+				<Route path='/forget-password' element={<ForgetPassword />} />
+				<Route path='/reset-password/:token' element={<ResetPassword />} />
 
 				<Route path='/unauthorized' element={<Unauthorized />} />
 				<Route path='/not-found' element={<NotFound />} />
