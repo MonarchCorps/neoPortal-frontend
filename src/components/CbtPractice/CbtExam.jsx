@@ -159,7 +159,7 @@ function CbtExam() {
                 <section>
                     <div className='pt-40 tmd:pt-48 w-[85%] max-w-[1204px] mx-auto'>
                         {submitLoading && (
-                            <div className="bg-red-700 text-[#fff] font-mon font-500 py-3 px-3 rounded-sm">
+                            <div className="bg-[#344CB7] text-[#fff] font-mon font-500 py-3 px-3 rounded-sm">
                                 <Loading2 text='Loading details' data='' isLoading={submitLoading} />
                             </div>
                         )}
@@ -168,13 +168,13 @@ function CbtExam() {
                         ) : !submitLoading && !isPending && questions?.isCompleted === false ? (
                             <>
                                 <h1 className='flex items-center'>
-                                    <Link to='/' onClick={scrollTop} className='text-red-700'>Home</Link>
+                                    <Link to='/' onClick={scrollTop} className='text-[#344CB7]'>Home</Link>
                                     <span><FaChevronRight className='text-sm mx-1 opacity-45' /></span>
                                     <p className="text-sm opacity-70 lowercase">exam</p>
                                 </h1>
                                 <div className="flex justify-between mt-5 mb-2">
                                     <h1 className="font-sans font-400 text-2xl csm:text-xl">
-                                        Time Left: <span className="font-500 text-red-600">{formatTimeLeft(timeLeft)}</span>
+                                        Time Left: <span className="font-500 text-[#1F509A]">{formatTimeLeft(timeLeft)}</span>
                                     </h1>
                                     <p className="font-mon text-base chmd:hidden">
                                         <span className="font-500">{questions?.startTime ? formatTime(questions?.startTime) : '00'}</span>
@@ -186,7 +186,7 @@ function CbtExam() {
                                 <div className="flex justify-between csm:flex-col csm:gap-3 csm:items-start items-center mt-2 shadow-sm py-4 px-3">
                                     <h1 className="font-poppins font-400 text-3xl capitalize">{currentSelectedQuestions?.replace(/-/g, " ")}</h1>
                                     <div className="grid grid-flow-col place-content-center gap-3">
-                                        <button onClick={() => { handleProcessSubmit('submit'); }} className='border-2 border-solid border-red-600 bg-red-600 text-[#fff] shadow-sm py-2 px-4 rounded-md transition-all duration-300 hover:text-red-600 hover:bg-[#eee] font-500 font-mon'>
+                                        <button onClick={() => { handleProcessSubmit('submit'); }} className='border-2 border-solid border-[#1F509A] bg-[#1F509A] text-[#fff] shadow-sm py-2 px-4 rounded-md transition-all duration-300 hover:text-[#1F509A] hover:bg-[#eee] font-500 font-mon'>
                                             Submit
                                         </button>
                                         <button onClick={() => { handleProcessSubmit('quit'); }} className='border-2 border-solid border-gray-700 bg-gray-700 text-[#fff] shadow-sm py-2 px-4 rounded-md transition-all duration-300 hover:text-gray-700 hover:bg-[#eee] hover:rounded-none'>
@@ -201,7 +201,7 @@ function CbtExam() {
                                                 <button
                                                     key={i}
                                                     className={`whitespace-nowrap p-2 rounded-md capitalize transition-all duration-200 hover:scale-90 flex items-center
-                                                    ${currentSelectedQuestions === subject ? 'bg-[#bd3d3d5c] text-red-600 p-2 font-500' : 'bg-gray-300 text-[#000]'}`}
+                                                    ${currentSelectedQuestions === subject ? 'bg-[#bd3d3d5c] text-[#1F509A] p-2 font-500' : 'bg-gray-300 text-[#000]'}`}
                                                     onClick={() => {
                                                         setCurrentSelectedQuestions(subject)
                                                         setCurrentQuestionIndex(0)
@@ -339,9 +339,9 @@ function CbtExam() {
                                                                 className={
                                                                     ` border border-solid  px-4 py-[0.6rem] rounded-xl transition-all duration-500 hover:scale-90 hover:border-[#b70c01] hover:shadow-[0px_2px_4px_0px_rgba(0_0_0_0.12)]
                                                                  ${currQueSelectedQue[i]?.userAnswer !== null
-                                                                        ? 'bg-red-600'
+                                                                        ? 'bg-[#1F509A]'
                                                                         : currentQuestionIndex === i
-                                                                            ? 'bg-slate-200 text-red-600  border-red-600 hover:border-[#b70c01]'
+                                                                            ? 'bg-slate-200 text-[#1F509A]  border-[#1F509A] hover:border-[#b70c01]'
                                                                             : ' bg-slate-200 border-slate-600'}`}
                                                             >
                                                                 {i + 1}
@@ -352,7 +352,7 @@ function CbtExam() {
                                             </ul>
                                         </div>
                                     ) : (
-                                        <div className="col-span-2 text-center bg-red-400 py-2 font-500 rounded shadow">
+                                        <div className="col-span-2 text-center bg-[#608BC1] py-2 font-500 rounded shadow">
                                             <p>No questions available at the moment!</p>
                                         </div>
                                     )
@@ -361,7 +361,7 @@ function CbtExam() {
                                 </div>
                             </>
                         ) : !submitLoading && isPending ? (
-                            <div className="bg-red-700 text-[#fff] font-mon font-500 py-3 px-3 rounded-sm">
+                            <div className="bg-[#344CB7] text-[#fff] font-mon font-500 py-3 px-3 rounded-sm">
                                 <Loading2 text='Loading details' data='' isLoading={isPending} />
                             </div>
                         ) : (

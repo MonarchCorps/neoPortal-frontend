@@ -76,7 +76,7 @@ function EditTeacher({ dialogCloseRef, handleEditTeacher, handleEditChange, edit
                     <div>
                         <button
                             type='button'
-                            className="bg-red-600 text-[#fff] font-mon font-600 text-base mr-3 px-3 py-2 rounded-md shadow"
+                            className="bg-[#1F509A] text-[#fff] font-mon font-600 text-base mr-3 px-3 py-2 rounded-md shadow"
                             onClick={() => {
                                 dialogCloseRef.current?.click();
                             }}>

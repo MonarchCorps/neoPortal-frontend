@@ -26,7 +26,7 @@ function FormatDesc({ format, handleSetFormat }) {
                             className='font-poppins text-sm font-600'
                         >
                             CSV
-                            {format === 'csv' && <div className='bg-red-400 h-[1px] w-full'></div>}
+                            {format === 'csv' && <div className='bg-[#608BC1] h-[1px] w-full'></div>}
                         </button>
                         <button
                             type='button'
@@ -34,7 +34,7 @@ function FormatDesc({ format, handleSetFormat }) {
                             className='font-poppins text-sm font-600'
                         >
                             JSON
-                            {format === 'json' && <div className='bg-red-400 h-[1px] w-full'></div>}
+                            {format === 'json' && <div className='bg-[#608BC1] h-[1px] w-full'></div>}
                         </button>
                     </div>
                     {

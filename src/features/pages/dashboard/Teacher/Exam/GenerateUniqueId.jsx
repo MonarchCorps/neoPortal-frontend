@@ -58,7 +58,7 @@ function GenerateUniqueId({ formData, setFormData, dialogCloseRef }) {
                         </p>
                     </DialogTitle>
                 </DialogHeader>
-                <DialogDescription className='text-red-600'>
+                <DialogDescription className='text-[#1F509A]'>
                     <div className='flex items-center justify-center'>
                         <button
                             type='button'
@@ -81,7 +81,7 @@ function GenerateUniqueId({ formData, setFormData, dialogCloseRef }) {
                 <div className="flex items-center space-x-2">
                     <div className="grid flex-1 gap-2">
                         <p className='text-center font-poppins text-base/relaxed'>Share this ID with your
-                            <span className='text-red-600 font-poppins font-700'> students</span> so that they can take the exam live and you will be able to monitor them from your dashboard
+                            <span className='text-[#1F509A] font-poppins font-700'> students</span> so that they can take the exam live and you will be able to monitor them from your dashboard
                         </p>
                         <div className='flex items-center justify-center'>
                             <button

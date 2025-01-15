@@ -156,7 +156,7 @@ function AsideBottomNav() {
                                     Log out
                                 </DropdownMenuItem>
                                 <DropdownMenuSeparator />
-                                <DropdownMenuItem className="cursor-pointer text-red-600 font-500" onClick={() => setIsModalOpen(!isModalOpen)}>
+                                <DropdownMenuItem className="cursor-pointer text-red-800 font-500" onClick={() => setIsModalOpen(!isModalOpen)}>
                                     <Delete />
                                     Delete Account
                                 </DropdownMenuItem>

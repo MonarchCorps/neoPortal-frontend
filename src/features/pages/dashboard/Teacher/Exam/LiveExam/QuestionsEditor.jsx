@@ -250,7 +250,7 @@ function QuestionsEditor({ formData, handleChange }) {
                     </button>
                     &nbsp;
                     <button
-                        className='bg-red-700  text-[#fff] px-3 py-[0.4rem] rounded-md font-mon font-600 text-sm'
+                        className='bg-[#344CB7]  text-[#fff] px-3 py-[0.4rem] rounded-md font-mon font-600 text-sm'
                         onClick={() => handleUploadQuestions.mutate({ state: 'published' })}
                     >
                         Publish
@@ -321,7 +321,7 @@ function QuestionsEditor({ formData, handleChange }) {
                                 <AccordionItem
                                     key={question.key}
                                     value={question.key}
-                                    className={`border border-solid rounded p-4 mb-2 ${question.question && !question.answer.text ? 'border-red-700' : ''}`}
+                                    className={`border border-solid rounded p-4 mb-2 ${question.question && !question.answer.text ? 'border-[#344CB7]' : ''}`}
                                 >
                                     <div className='flex items-center justify-between flex-wrap gap-2'>
                                         <div className='flex items-center gap-3 mr-3'>
@@ -332,9 +332,9 @@ function QuestionsEditor({ formData, handleChange }) {
                                         </div>
                                         <div className='flex items-center justify-between gap-2'>
                                             {question.question && !question.answer.text && (
-                                                <p className='bg-red-600 text-[#fff] font-mon font-600 px-2 rounded-md text-sm'>Please select an answer</p>
+                                                <p className='bg-[#1F509A] text-[#fff] font-mon font-600 px-2 rounded-md text-sm'>Please select an answer</p>
                                             )}
-                                            {i + 1 !== 1 && (<button onClick={() => handleRemoveQuestion(i, question.key, questions, setQuestions)} className='text-red-600 p-3 bg-red-500 bg-opacity-15 border border-red-500 rounded-md transition-all duration-200 hover:bg-opacity-100 hover:text-[#eeeded]'>
+                                            {i + 1 !== 1 && (<button onClick={() => handleRemoveQuestion(i, question.key, questions, setQuestions)} className='text-[#1F509A] p-3 bg-[#608BC1] bg-opacity-15 border border-[#608BC1] rounded-md transition-all duration-200 hover:bg-opacity-100 hover:text-[#eeeded]'>
                                                 <FaRegTrashCan />
                                             </button>
                                             )}
@@ -344,7 +344,7 @@ function QuestionsEditor({ formData, handleChange }) {
                                     <AccordionContent className='p-0'>
                                         <div className='my-4'>
                                             <div className='grid grid-flow-col w-fit items-center'>
-                                                <FaDotCircle className='text-base text-red-600 mr-1 align-middle -mt-2' />
+                                                <FaDotCircle className='text-base text-[#1F509A] mr-1 align-middle -mt-2' />
                                                 <h1 className='font-poppins font-600 mb-2 text-xl xsm:text-base'>Question</h1>
                                             </div>
                                             <QuillEditor
@@ -373,7 +373,7 @@ function QuestionsEditor({ formData, handleChange }) {
                                                                 </div>
                                                                 {opt.id !== 'A' && opt.id !== 'B' && (
                                                                     <button
-                                                                        className='text-red-600 p-2 bg-red-500 bg-opacity-15 border border-red-500 rounded-md transition-all duration-200 hover:bg-opacity-100 hover:text-[#eeeded]'
+                                                                        className='text-[#1F509A] p-2 bg-[#608BC1] bg-opacity-15 border border-[#608BC1] rounded-md transition-all duration-200 hover:bg-opacity-100 hover:text-[#eeeded]'
                                                                         onClick={() => handleRemoveOption(i, opt.key, questions, setQuestions)}
                                                                     >
                                                                         <FaRegTrashCan />
@@ -404,7 +404,7 @@ function QuestionsEditor({ formData, handleChange }) {
                                         </button>
                                         <div className='my-3'>
                                             <div className='grid grid-flow-col w-fit items-center'>
-                                                <FaDotCircle className='text-base text-red-600 mr-1 align-middle -mt-2' />
+                                                <FaDotCircle className='text-base text-[#1F509A] mr-1 align-middle -mt-2' />
                                                 <h1 className='font-poppins font-600 mb-2 text-xl xsm:text-base'>Answer Description
                                                     <span className='text-sm font-400 opacity-65'> &nbsp;&nbsp;(optional)</span>
                                                 </h1>

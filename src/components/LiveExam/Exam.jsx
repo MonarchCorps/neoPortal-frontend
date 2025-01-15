@@ -156,20 +156,20 @@ function Exam({ questions, setQuestions }) {
 
     return (
         submitLoading ? (
-            <div className="bg-red-700 text-[#fff] py-3 px-3 rounded-sm font-poppins font-700">
+            <div className="bg-[#344CB7] text-[#fff] py-3 px-3 rounded-sm font-poppins font-700">
                 <Loading2 text='Submitting Exam' data='' isLoading={submitLoading} />
             </div>
         )
             : !submitLoading && !hasSubmitted ? (
                 <div className='w-[85%] max-w-[1204px] mx-auto'>
                     <h1 className='flex items-center'>
-                        <Link to='/' onClick={scrollTop} className='text-red-700'>Home</Link>
+                        <Link to='/' onClick={scrollTop} className='text-[#344CB7]'>Home</Link>
                         <span><FaChevronRight className='text-sm mx-1 opacity-45' /></span>
                         <p className="text-sm opacity-70 lowercase">exam</p>
                     </h1>
                     <div className="flex justify-between mt-5 mb-2">
                         <h1 className="font-sans font-400 text-2xl csm:text-xl tmd:text-base">
-                            Time Left: <span className="font-500 text-red-600">{formatTimeLeft(timeLeft)}</span>
+                            Time Left: <span className="font-500 text-[#1F509A]">{formatTimeLeft(timeLeft)}</span>
                         </h1>
                         <p className="font-mon text-base chmd:hidden tmd:text-base">
                             <span className="font-500">{questions?.liveStartTime ? formatDate(questions?.liveStartTime) : new Date().toISOString()}</span>
@@ -181,7 +181,7 @@ function Exam({ questions, setQuestions }) {
                     <div className="flex justify-between csm:flex-col csm:gap-3 csm:items-start items-center mt-2 shadow-sm py-4 px-3">
                         <h1 className="font-poppins font-400 text-3xl capitalize">Live Exam</h1>
                         <div className="grid grid-flow-col place-content-center gap-3">
-                            <button onClick={() => { handleProcessSubmit('submit'); }} className='border-2 border-solid border-red-600 bg-red-600 text-[#fff] shadow-sm py-2 px-4 rounded-md transition-all duration-300 hover:text-red-600 hover:bg-[#eee] font-500 font-mon'>
+                            <button onClick={() => { handleProcessSubmit('submit'); }} className='border-2 border-solid border-[#1F509A] bg-[#1F509A] text-[#fff] shadow-sm py-2 px-4 rounded-md transition-all duration-300 hover:text-[#1F509A] hover:bg-[#eee] font-500 font-mon'>
                                 Submit
                             </button>
                             <button onClick={() => { handleProcessSubmit('quit'); }} className='border-2 border-solid border-gray-700 bg-gray-700 text-[#fff] shadow-sm py-2 px-4 rounded-md transition-all duration-300 hover:text-gray-700 hover:bg-[#eee] hover:rounded-none'>
@@ -192,7 +192,7 @@ function Exam({ questions, setQuestions }) {
                     <div className="grid grid-cols-[1fr,auto] cimd:flex cimd:flex-col cimd:gap-0 shadow-sm gap-7 pl-10 cimd:pl-0">
                         <div className="overflow-scroll max-w-[95%] flex cimd:max-w-full gap-4 py-3 cimd:pl-2 cimd:pr-2">
                             <span
-                                className='text-wrap text-3xl text-red-600'
+                                className='text-wrap text-3xl text-[#1F509A]'
                                 dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(trim(currQue?.question, 100)) }}
                             >
                             </span>
@@ -315,9 +315,9 @@ function Exam({ questions, setQuestions }) {
                                                 className={
                                                     ` border border-solid  px-4 py-[0.6rem] rounded-xl transition-all duration-500 hover:scale-90 hover:border-[#b70c01] hover:shadow-[0px_2px_4px_0px_rgba(0_0_0_0.12)]
                                                                  ${questions?.liveUserAnswer[0]?.answers?.find(ans => ans?.questionId === currQue?._id && ans?.selectedOptionId !== '')
-                                                        ? 'bg-red-600 text-[#fff]'
+                                                        ? 'bg-[#1F509A] text-[#fff]'
                                                         : currentQuestionIndex === i
-                                                            ? 'bg-slate-200 text-red-600  border-red-600 hover:border-[#b70c01]'
+                                                            ? 'bg-slate-200 text-[#1F509A]  border-[#1F509A] hover:border-[#b70c01]'
                                                             : ' bg-slate-200 border-slate-600'}`}
                                             >
                                                 {i + 1}
@@ -328,7 +328,7 @@ function Exam({ questions, setQuestions }) {
                             </ul>
                         </div>
                     ) : (
-                        <div className="col-span-2 text-center bg-red-400 py-2 font-500 rounded shadow mt-4">
+                        <div className="col-span-2 text-center bg-[#608BC1] py-2 font-500 rounded shadow mt-4">
                             <p>No questions available at the moment!</p>
                         </div>
                     )}
@@ -337,7 +337,7 @@ function Exam({ questions, setQuestions }) {
                 <div className='w-[85%] max-w-[1204px] mx-auto text-center shadow p-3'>
                     <h1 className='text-xl font-500 csm:text-base'>Your exam has been successfully submitted <CheckCircle2 className='inline text-green-700 -mt-[1px]' /> </h1>
                     <p className='my-2 font-poppins max-w-[40rem] mx-auto text-wrap csm:text-sm'><strong>Note: </strong>You won&apos;t be able to see the details of your exam. So make sure to check back with your tutor</p>
-                    <p className='font-poppins text-red-600 csm:text-sm'>You can only take a live exam once!</p>
+                    <p className='font-poppins text-[#1F509A] csm:text-sm'>You can only take a live exam once!</p>
                 </div>
             )
     )

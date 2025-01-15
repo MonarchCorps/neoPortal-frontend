@@ -154,9 +154,9 @@ function Preview({ isModalOpen, closeModal, currentQuestionIndex, currQue, previ
                                                 className={
                                                     ` border border-solid  px-4 py-[0.6rem] rounded-xl transition-all duration-500 hover:scale-90 hover:border-[#b70c01] hover:shadow-[0px_2px_4px_0px_rgba(0_0_0_0.12)]
                                                  ${preview[i]?.answer.text !== ''
-                                                        ? 'bg-red-600'
+                                                        ? 'bg-[#1F509A]'
                                                         : currentQuestionIndex === i
-                                                            ? 'bg-slate-200 text-red-600  border-red-600 hover:border-[#b70c01]'
+                                                            ? 'bg-slate-200 text-[#1F509A]  border-[#1F509A] hover:border-[#b70c01]'
                                                             : ' bg-slate-200 border-slate-600'}`}
                                             >
                                                 {i + 1}

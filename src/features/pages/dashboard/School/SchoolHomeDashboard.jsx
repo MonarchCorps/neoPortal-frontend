@@ -232,7 +232,7 @@ function SchoolHomeDashboard() {
 
                             </div>
                             {teacherIsLoading ? (
-                                <div className="bg-red-700 text-[#fff] font-mon font-500 py-3 px-3 rounded-sm w-[85%] max-w-[1204px] mx-auto">
+                                <div className="bg-[#344CB7] text-[#fff] font-mon font-500 py-3 px-3 rounded-sm w-[85%] max-w-[1204px] mx-auto">
                                     <Loading2 text='Loading list of teachers' data='' isLoading={teacherIsLoading} />
                                 </div>
                             ) : !teacherIsLoading && data?.length > 0 ? (
@@ -249,18 +249,18 @@ function SchoolHomeDashboard() {
                                                 {trim(teacher?.email, 20)}
                                             </p>
                                             <p className='font-500 font-poppins text-base text-center capitalize hlg:text-start'>
-                                                <span className="hidden hlg:inline-block text-red-700">Subject:&nbsp;</span>
+                                                <span className="hidden hlg:inline-block text-[#344CB7]">Subject:&nbsp;</span>
                                                 {trim(teacher?.assignedSubject?.replace(/-/g, " "), 20)}
                                             </p>
                                             <div className='hidden msm:grid msm:grid-cols-[40px,1fr] msm:gap-4 hxsm:flex hxsm:gap-2'>
                                                 <p className='font-500 font-poppins text-base'></p>
-                                                <span className="hidden hxsm:inline-block  text-red-700">Name:</span>
+                                                <span className="hidden hxsm:inline-block  text-[#344CB7]">Name:</span>
                                                 {trim(teacher?.name, 20)}
                                             </div>
                                             <div className="col-span-2 text-center flex items-center justify-center gap-4 hxsm:justify-start">
-                                                <span className="hidden hlg:inline-block text-red-700">Action:&nbsp;</span>
+                                                <span className="hidden hlg:inline-block text-[#344CB7]">Action:&nbsp;</span>
                                                 <EditTeacher dialogCloseRef={dialogCloseRef} handleEditTeacher={handleEditTeacher} handleEditChange={handleEditChange} editData={editData} editEmptyField={editEmptyField} setCurrTeacherId={setCurrTeacherId} teacherId={teacher?._id} />
-                                                <button className="text-red-600 text-2xl" onClick={() => handleDeleteTeacher.mutate({ teacherId: teacher?._id })}>
+                                                <button className="text-[#1F509A] text-2xl" onClick={() => handleDeleteTeacher.mutate({ teacherId: teacher?._id })}>
                                                     <FaTrashCan />
                                                 </button>
                                             </div>

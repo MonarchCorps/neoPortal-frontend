@@ -13,40 +13,40 @@ function ExamSummary({ isLoading, flattenedSummary }) {
     return (
         <>
             {isLoading && (
-                <div className="bg-red-700 text-[#fff] font-mon font-500 py-3 px-3 rounded-sm">
+                <div className="bg-[#344CB7] text-[#fff] font-mon font-500 py-3 px-3 rounded-sm">
                     <Loading2 text='Loading details' data='' isLoading={isLoading} />
                 </div>
             )}
             {!isLoading && (
                 <>
                     <h1 className='flex items-center'>
-                        <Link to='/' onClick={scrollTop} className='text-red-700'>Home</Link>
+                        <Link to='/' onClick={scrollTop} className='text-[#344CB7]'>Home</Link>
                         <span><FaChevronRight className='text-sm mx-1 opacity-45' /></span>
                         <p className="text-sm opacity-70 lowercase">Classroom</p>
                     </h1>
                     <div className='border border-solid shadow-sm px-5 py-4 mt-5'>
-                        <h1 className='font-roboto font-500 text-4xl text-red-800 opacity-95 esm:text-2xl'>
+                        <h1 className='font-roboto font-500 text-4xl text-[#344CB7] opacity-95 esm:text-2xl'>
                             Exam Performance and result
                         </h1>
                     </div>
 
                     <div className='mt-4'>
                         <h1 className='text-3xl mb-1 esm:text-xl'>Score:</h1>
-                        <h1 className='text-5xl text-red-700 font-500 tracking-wide esm:text-3xl'>{flattenedSummary?.totalPercentage === '0.00' || flattenedSummary?.totalPercentage === 'N/A' || flattenedSummary?.totalPercentage === undefined ? '0%' : `${flattenedSummary?.totalPercentage}%`}</h1>
+                        <h1 className='text-5xl text-[#344CB7] font-500 tracking-wide esm:text-3xl'>{flattenedSummary?.totalPercentage === '0.00' || flattenedSummary?.totalPercentage === 'N/A' || flattenedSummary?.totalPercentage === undefined ? '0%' : `${flattenedSummary?.totalPercentage}%`}</h1>
                     </div>
 
                     <div className='mt-10 mb-7 utsm:flex utsm:flex-col utsm:gap-2 utsm:text-center'>
-                        <Link to='/cbt-practice/exam-history' onClick={scrollTop} className='border-2 border-solid border-red-600 text-red-600 shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee]'>
+                        <Link to='/cbt-practice/exam-history' onClick={scrollTop} className='border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-[#1F509A] hover:text-[#eee]'>
                             Exam History
                         </Link>
-                        <Link to='/cbt-practice' onClick={scrollTop} className='border-2 ml-3 utsm:ml-0 border-solid border-red-600 text-red-600 shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee]'>
+                        <Link to='/cbt-practice' onClick={scrollTop} className='border-2 ml-3 utsm:ml-0 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-[#1F509A] hover:text-[#eee]'>
                             Start another exam
                         </Link>
                     </div>
 
-                    <div className="border-l-4 border-solid border-red-700 ml-10 mt-8 p-2 shadow w-fit">
+                    <div className="border-l-4 border-solid border-[#344CB7] ml-10 mt-8 p-2 shadow w-fit">
                         <p className='font-karla font-500 text-slate-900'>
-                            Answered <span className='font-700 text-red-700'>10</span> out of <span className='font-700 text-red-700'>40</span> correctly!
+                            Answered <span className='font-700 text-[#344CB7]'>10</span> out of <span className='font-700 text-[#344CB7]'>40</span> correctly!
                         </p>
                     </div>
 

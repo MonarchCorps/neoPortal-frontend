@@ -22,7 +22,7 @@ function ExamHistory({ data, isLoading, page }) {
                         <div key={content?._id} className='border border-solid border-gray-100 px-2 grid grid-cols-7 md:grid-cols-5 aism:grid-cols-2 md:px-0 xsm:grid-cols-1 items-center'>
                             <div className='border-r border-solid border-gray-200 py-3 col-span-3 md:border-b md:px-2'>
                                 <div className="flex gap-3">
-                                    <strong className="hidden md:block text-red-600">{page?.page * page?.n + i + 1}.</strong>
+                                    <strong className="hidden md:block text-[#1F509A]">{page?.page * page?.n + i + 1}.</strong>
                                     <h1 className='font-poppins gap-2'>{modifySubs?.map((sub, i) => {
                                         if (i !== modifySubs?.length - 1) {
                                             return <span key={sub} className="font-500 font-karla">{sub}, </span>
@@ -61,7 +61,7 @@ function ExamHistory({ data, isLoading, page }) {
                                 <Link
                                     onClick={scrollTop}
                                     to={`${`/cbt-practice/exam-summary/${content?._id}`}`}
-                                    className='border-2 border-solid border-red-600 text-red-600 shadow-sm px-3 py-2 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee]'>
+                                    className='border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm px-3 py-2 rounded-md transition-all duration-300 hover:bg-[#1F509A] hover:text-[#eee]'>
                                     Review
                                 </Link>
                             </div>
@@ -70,7 +70,7 @@ function ExamHistory({ data, isLoading, page }) {
                 })}
             </div>
         ) : isLoading ? (
-            <div className="bg-red-700 text-[#fff] font-mon font-500 py-3 px-3 rounded-sm w-[85%] max-w-[1204px] mx-auto">
+            <div className="bg-[#344CB7] text-[#fff] font-mon font-500 py-3 px-3 rounded-sm w-[85%] max-w-[1204px] mx-auto">
                 <Loading2 text='Loading history' data='' isLoading={isLoading} />
             </div>
         ) : !isLoading && data?.length === 0 || data?.length === undefined && (

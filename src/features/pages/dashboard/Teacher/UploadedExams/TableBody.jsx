@@ -33,7 +33,7 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
                             <p className='text-base capitalize text-center'>{detail?.examType || 'N/A'}</p>
                             <p className='col-span-2 text-center text-sm capitalize'>{detail?.subject ? trim(detail?.subject, 18) : 'N/A'}</p>
                             <p className='text-base col-span-2 text-center'>{detail?.questionsData?.length}</p>
-                            <p className='text-sm text-center capitalize text-red-500 font-mon font-600'>{detail?.mode || 'N/A'}</p>
+                            <p className='text-sm text-center capitalize text-[#608BC1] font-mon font-600'>{detail?.mode || 'N/A'}</p>
                             <p className='text-sm text-center'>
                                 {
                                     detail?.state === 'published' ? 'Published' : 'Saved'
@@ -53,7 +53,7 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
                                             </Link>
                                             <Dialog>
                                                 <DialogTrigger asChild>
-                                                    <li className='cursor-pointer text-red-500 font-400 pl-5 hover:font-500 py-2 flex justify-between items-center select-none transition-all duration hover:bg-red-600 hover:text-[#fff]'>
+                                                    <li className='cursor-pointer text-[#608BC1] font-400 pl-5 hover:font-500 py-2 flex justify-between items-center select-none transition-all duration hover:bg-[#1F509A] hover:text-[#fff]'>
                                                         <div className='grid grid-flow-col justify-start items-center gap-3'>
                                                             <FaArrowsToEye />
                                                             <span className='font-sans'>Change Visibility</span>
@@ -68,7 +68,7 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
                                                                 Change Visibility
                                                             </p>
                                                         </DialogTitle>
-                                                        <DialogDescription className='text-red-600 text-center'>
+                                                        <DialogDescription className='text-[#1F509A] text-center'>
                                                             You agree to make this exam {detail?.state === 'saved' ? (
                                                                 <button
                                                                     type='button'
@@ -91,22 +91,22 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
                                                             <p className='text-center font-poppins text-base/relaxed'>
                                                                 If you make this exam {detail?.state === 'saved' && detail?.mode === 'live' ? (
                                                                     <>
-                                                                        <span className='text-red-600 font-poppins font-700'>public </span>
-                                                                        <span className='text-red-600 font-poppins font-700'>only those with the exam ID</span> will be able to see it and take the exam once
+                                                                        <span className='text-[#1F509A] font-poppins font-700'>public </span>
+                                                                        <span className='text-[#1F509A] font-poppins font-700'>only those with the exam ID</span> will be able to see it and take the exam once
                                                                     </>
                                                                 ) : detail?.state === 'published' && detail?.mode === 'live' ? (
                                                                     <span>
-                                                                        <span className='text-red-600 font-poppins font-700'>private </span>
-                                                                        <span className='text-red-600 font-poppins font-700'>those with the exam ID</span> will not be able to take the exam </span>
+                                                                        <span className='text-[#1F509A] font-poppins font-700'>private </span>
+                                                                        <span className='text-[#1F509A] font-poppins font-700'>those with the exam ID</span> will not be able to take the exam </span>
                                                                 ) : detail?.state === 'saved' && (detail?.mode === 'practice' || !details?.mode) ? (
                                                                     <>
-                                                                        <span className='text-red-600 font-poppins font-700'>public </span>
-                                                                        <span className='text-red-600 font-poppins font-700'>everyone</span> will be able to see it and practice with the exam
+                                                                        <span className='text-[#1F509A] font-poppins font-700'>public </span>
+                                                                        <span className='text-[#1F509A] font-poppins font-700'>everyone</span> will be able to see it and practice with the exam
                                                                     </>
                                                                 ) : (
                                                                     <>
-                                                                        <span className='text-red-600 font-poppins font-700'>private </span>
-                                                                        <span className='text-red-600 font-poppins font-700'>nobody</span> will be able to see it and practice with the exam
+                                                                        <span className='text-[#1F509A] font-poppins font-700'>private </span>
+                                                                        <span className='text-[#1F509A] font-poppins font-700'>nobody</span> will be able to see it and practice with the exam
                                                                     </>
                                                                 )}
                                                             </p>
@@ -133,7 +133,7 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
 
                                                 </DialogContent>
                                             </Dialog>
-                                            <li className='cursor-pointer text-red-500 font-400 pl-5 hover:font-500 py-2 flex justify-between items-center select-none transition-all duration hover:bg-red-600 hover:text-[#fff]' onClick={() => { setDataToDelete(detail?._id); setIsModalOpen(!isModalOpen) }}>
+                                            <li className='cursor-pointer text-[#608BC1] font-400 pl-5 hover:font-500 py-2 flex justify-between items-center select-none transition-all duration hover:bg-[#1F509A] hover:text-[#fff]' onClick={() => { setDataToDelete(detail?._id); setIsModalOpen(!isModalOpen) }}>
                                                 <div className='grid grid-flow-col justify-start items-center gap-3'>
                                                     <FaTrash />
                                                     <span className='font-sans'>Delete Exam</span>

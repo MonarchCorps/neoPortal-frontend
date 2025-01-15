@@ -8,7 +8,7 @@ function AddTeacher({ dialogCloseRef, handleAddTeacher, handleChange, formData, 
         <Dialog>
             <DialogTrigger asChild>
                 <div className='flex justify-end'>
-                    <button type="button" className='flex items-center gap-2 border-2 border-solid border-red-600 text-red-600 shadow-sm p-3 transition-all duration-300 hover:bg-red-600 hover:text-[#eee] hover:rounded-lg'>
+                    <button type="button" className='flex items-center gap-2 border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-3 transition-all duration-300 hover:bg-[#1F509A] hover:text-[#eee] hover:rounded-lg'>
                         <FaPlus />
                         Add a Teacher
                     </button>
@@ -79,7 +79,7 @@ function AddTeacher({ dialogCloseRef, handleAddTeacher, handleChange, formData, 
                     <div>
                         <button
                             type='button'
-                            className="bg-red-600 text-[#fff] font-mon font-600 text-base mr-3 px-3 py-2 rounded-md shadow"
+                            className="bg-[#1F509A] text-[#fff] font-mon font-600 text-base mr-3 px-3 py-2 rounded-md shadow"
                             onClick={() => {
                                 dialogCloseRef.current?.click();
                                 setFormData({

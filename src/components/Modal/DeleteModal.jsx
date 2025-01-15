@@ -29,7 +29,7 @@ export function DeleteConfirmButton({ onClick, className, style }) {
             onClick={(event) => {
                 onClick?.(event)
             }}
-            className={`px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 ${className}`}
+            className={`px-4 py-2 bg-[#608BC1] text-white rounded hover:bg-[#1F509A] ${className}`}
             style={{ ...style }}
         >
             Confirm

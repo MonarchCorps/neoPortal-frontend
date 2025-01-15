@@ -18,14 +18,14 @@ function Header() {
     return (
         <>
             <Loading text='Logging out' isLoading={logoutPending} />
-            <header className="fixed w-full top-0 bg-red-900 z-[1000]">
+            <header className="fixed w-full top-0 bg-[#344CB7] z-[1000]">
                 <div className='flex justify-between items-center px-4 py-2 tmd:flex-col tmd:gap-4 tmd:items-start'>
                     <Link
                         to='/'
                         onClick={scrollTop}
                         className='font-500 font-mon text-2xl bg-transparent select-none'
                     >
-                        <span className='bg-red-900 p-1 text-[#fff]'>Exam</span><span className='bg-[#fff] p-1 text-slate-900'> Portal</span>
+                        <span className='bg-[#1F509A] p-1 text-[#fff]'>Exam</span><span className='bg-[#fff] p-1 text-slate-900'> Portal</span>
                     </Link>
                     <div className='flex items-center border-[1px] border-solid border-[#eaeaea] h-[40px] w-[22rem] tmd:w-full rounded-md'>
                         <FaSearch className='mx-3 text-slate-100 rotate-90 text-xl opacity-80' />
@@ -38,7 +38,7 @@ function Header() {
                         />
                     </div>
                 </div>
-                <div className='bg-red-950 pt-2 px-7 flex items-center justify-between'>
+                <div className='bg-[#1F509A] pt-2 px-7 flex items-center justify-between'>
                     <Nav />
                     <MenuDropdown />
                     {
@@ -54,7 +54,7 @@ function Header() {
                                 <Link
                                     to='/register'
                                     onClick={scrollTop}
-                                    className='border border-current grid place-content-center px-3 py-1 text-red-900 bg-[#eee] rounded-md'
+                                    className='border border-current grid place-content-center px-3 py-1 text-[#074799] bg-[#eee] rounded-md'
                                 >
                                     Sign Up
                                 </Link>

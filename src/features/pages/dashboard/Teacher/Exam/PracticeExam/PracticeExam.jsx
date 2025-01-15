@@ -56,11 +56,11 @@ function PracticeExam() {
                     <>
                         <h1 className='text-4xl sm:text-3xl axsm:text-2xl font-500'>
                             <span className='inline-block'> Upload Practice Exam</span>
-                            <span className='text-red-600 inline-block align-middle ml-2 -mt-1'>
+                            <span className='text-[#1F509A] inline-block align-middle ml-2 -mt-1'>
                                 <MdOutlineClass />
                             </span>
                         </h1>
-                        <div className="border-l-4 border-solid border-red-700 ml-10 chsm:ml-5 mt-6 p-2 shadow axsm:text-sm/relaxed">
+                        <div className="border-l-4 border-solid border-[#344CB7] ml-10 chsm:ml-5 mt-6 p-2 shadow axsm:text-sm/relaxed">
                             <p>
                                 Effortlessly upload your practice exams to our platform, providing students with immediate access to valuable resources for exam preparation.
                             </p>
@@ -83,7 +83,7 @@ function PracticeExam() {
                             </ol>
                         </div>
                         <div>
-                            <h2 className='text-red-500 font-roboto text-3xl mb-3'>Set Exam Details</h2>
+                            <h2 className='text-[#608BC1] font-roboto text-3xl mb-3'>Set Exam Details</h2>
                             <div className='flex flex-col mb-3'>
                                 <label className='text-sm mb-2 font-500' htmlFor="examType">Exam Type</label>
                                 <select
@@ -142,7 +142,7 @@ function PracticeExam() {
                                         )
                                     }
                                 </select>
-                                {auth?.assignedSubject && <p className='text-sm text-red-600 mt-4 mb-2'>
+                                {auth?.assignedSubject && <p className='text-sm text-[#1F509A] mt-4 mb-2'>
                                     You have been assigned a default subject by your school institute. You can&apos;t change it.
                                     <span className='block text-[#000] font-poppins text-600'>Contact your institute for more details!</span>
                                 </p>}
@@ -151,7 +151,7 @@ function PracticeExam() {
                             <div className='grid justify-end'>
                                 <button
                                     type='submit'
-                                    className={`mt-4 border-2 border-solid border-red-600 text-red-600 shadow-sm p-3 rounded-md transition-all duration-300  ${!valid || proceed ? 'opacity-60' : 'hover:bg-red-600 hover:text-[#eee]'}`}
+                                    className={`mt-4 border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-3 rounded-md transition-all duration-300  ${!valid || proceed ? 'opacity-60' : 'hover:bg-[#1F509A] hover:text-[#eee]'}`}
                                     onClick={() => {
                                         setProceed(true)
                                         setTimeout(() => {

@@ -9,7 +9,7 @@ function Achievements() {
             <div className="max-w-[80%] mx-auto flex flex-col items-center mt-20">
                 <div className='mb-8 w-fit text-center'>
                     <h1 className='font-roboto font-500 text-2xl tracking-wide'>Our Achievements</h1>
-                    <div className='w-[16rem] bg-red-900 h-1 mt-3'></div>
+                    <div className='w-[16rem] bg-[#133E87] h-1 mt-3'></div>
                 </div>
                 <div className="grid grid-cols-2 aemd:grid-cols-1 mt-4 items-center justify-center">
                     <img
@@ -20,25 +20,25 @@ function Achievements() {
                     />
                     <div className="grid grid-cols-2 text-center gap-10 csm:gap-6 aemd:mt-8">
                         <div>
-                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-red-900 csm:text-3xl'>
+                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-[#133E87] csm:text-3xl'>
                                 <CountUp from={0} to={340} duration={3} />+
                             </h1>
                             <p className='text-xl font-500 csm:text-base'>Assessments</p>
                         </div>
                         <div>
-                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-red-900 csm:text-3xl'>
+                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-[#133E87] csm:text-3xl'>
                                 <CountUp from={0} to={350} duration={2} />+
                             </h1>
                             <p className='text-xl font-500 csm:text-base'>Clients</p>
                         </div>
                         <div>
-                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-red-900 csm:text-3xl'>
+                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-[#133E87] csm:text-3xl'>
                                 <CountUp from={0} to={46} duration={2} />+
                             </h1>
                             <p className='text-xl font-500 csm:text-base'>Countries</p>
                         </div>
                         <div>
-                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-red-900 csm:text-3xl'>
+                            <h1 className='text-[3.5rem] leading-[1.2] font-700 mb-1 text-[#133E87] csm:text-3xl'>
                                 <CountUp from={0} to={125} duration={3.5} />M+
                             </h1>
                             <p className='text-xl font-500 csm:text-base'>Paper Saved</p>

@@ -90,7 +90,7 @@ function EditProfile() {
             <section>
                 <div className="p-10 mt-20 mb-10 max-w-[50rem] mx-auto shadow">
                     <h1 className="text-4xl font-roboto mb-2 tracking-tight fxsm:text-2xl">
-                        <span className="text-red-600 font-400">{auth?.name} </span>edit your profile
+                        <span className="text-[#1F509A] font-400">{auth?.name} </span>edit your profile
                     </h1>
                     <h3 className="text-xl font-mon font-600 fxsm:text-base">Personal Information</h3>
                     <form className="my-4 grid grid-cols-2 gap-4 fxsm:flex fxsm:flex-col" onSubmit={handleSubmit}>
@@ -256,7 +256,7 @@ function EditProfile() {
                         <div className="col-span-2 mt-5">
                             <button
                                 type="submit"
-                                className={`border-2 border-solid border-red-600 bg-red-600 text-[#fff] shadow-sm py-2 px-4 rounded-md duration-300 font-500 font-mon  hover:text-red-600 hover:bg-[#eee]`}
+                                className={`border-2 border-solid border-[#074799] bg-[#074799] text-[#fff] shadow-sm py-2 px-4 rounded-md duration-300 font-500 font-mon  hover:text-[#074799] hover:bg-[#eee]`}
                             >
                                 Update
                             </button>

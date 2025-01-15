@@ -19,7 +19,7 @@ function About() {
                             loading="lazy"
                         />
                         <div className='absolute top-[40%] left-10 max-w-[50rem]'>
-                            <h1 className='font-mon font-800 text-[#fff] text-4xl mb-2 sm:text-3xl'>Empowering Knowledge: <span className='text-red-900'>Seamless Exam Creation and Participation</span></h1>
+                            <h1 className='font-mon font-800 text-[#fff] text-4xl mb-2 sm:text-3xl'>Empowering Knowledge: <span className='text-[#0A3981]'>Seamless Exam Creation and Participation</span></h1>
                             <p className='text-[#000] text-base/relaxed font-500 leading-[1.6] sm:text-sm/relaxed'>
                                 Build, upload, and take exams effortlessly with our intuitive portal. Designed for exam creators and participants, our platform streamlines the process with advanced features for a secure, scalable assessment experience.
                             </p>

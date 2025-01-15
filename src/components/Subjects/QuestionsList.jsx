@@ -109,7 +109,7 @@ function QuestionsList({ filteredData }) {
                     const questionNumber = indexOfFirstQuestion + i + 1;
                     return (
                         <div className="flex gap-5" key={i}>
-                            <p className="text-[#fff] bg-red-700 size-fit px-4 py-2 rounded-full font-karla font-700 text-base grid place-content-center">
+                            <p className="text-[#fff] bg-[#344CB7] size-fit px-4 py-2 rounded-full font-karla font-700 text-base grid place-content-center">
                                 {questionNumber}
                             </p>
                             <div>
@@ -139,13 +139,13 @@ function QuestionsList({ filteredData }) {
                                     <Link
                                         onClick={scrollTop}
                                         to={`${question?._id}`}
-                                        className="border-2 border-solid border-red-600 text-red-600 shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee] text-center w-40"
+                                        className="border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-[#1F509A] hover:text-[#eee] text-center w-40"
                                     >
                                         View answer
                                     </Link>
                                     {savedQuestions?.find(sq => sq?._id === question?._id) ? (
                                         <button
-                                            className={`ml-2 ixsm:ml-0 border-2 border-solid border-red-600 text-red-600 shadow-sm p-2 py-3 rounded-md transition-all duration-300 w-40 grid place-content-center ${handleUnSave.isPending || handleSave.isPending ? 'bg-opacity-80 border-gray-400' : ' hover:bg-red-600 hover:text-[#eee]'}`}
+                                            className={`ml-2 ixsm:ml-0 border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-2 py-3 rounded-md transition-all duration-300 w-40 grid place-content-center ${handleUnSave.isPending || handleSave.isPending ? 'bg-opacity-80 border-gray-400' : ' hover:bg-[#1F509A] hover:text-[#eee]'}`}
                                             onClick={() => handleUnSave.mutate({ qId: question?._id })}
                                             disabled={handleUnSave.isPending || handleSave.isPending}
                                         >
@@ -163,7 +163,7 @@ function QuestionsList({ filteredData }) {
                                         </button>
                                     ) : (
                                         <button
-                                            className={`ml-2 ixsm:ml-0 border-2 border-solid border-red-600 text-red-600 shadow-sm p-2 py-3 rounded-md transition-all duration-300 w-40 grid place-content-center ${handleUnSave.isPending || handleSave.isPending ? 'bg-opacity-80 border-gray-400' : ' hover:bg-red-600 hover:text-[#eee]'}`}
+                                            className={`ml-2 ixsm:ml-0 border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-2 py-3 rounded-md transition-all duration-300 w-40 grid place-content-center ${handleUnSave.isPending || handleSave.isPending ? 'bg-opacity-80 border-gray-400' : ' hover:bg-[#1F509A] hover:text-[#eee]'}`}
                                             onClick={() => {
                                                 if (!auth?._id) {
                                                     navigate('/auth', { state: { from: location } });

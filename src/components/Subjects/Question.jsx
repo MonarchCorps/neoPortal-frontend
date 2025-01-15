@@ -32,23 +32,23 @@ function Question() {
                 <section>
                     <div className='pt-40 tmd:pt-48 w-[85%] max-w-[1204px] mx-auto'>
                         <h1 className='flex items-center'>
-                            <Link to='/' onClick={scrollTop} className='text-red-700'>Home</Link>
+                            <Link to='/' onClick={scrollTop} className='text-[#344CB7]'>Home</Link>
                             <span><FaChevronRight className='text-sm mx-1 opacity-45' /></span>
-                            <Link to='/classroom' className='text-red-700'>Classroom</Link>
+                            <Link to='/classroom' className='text-[#344CB7]'>Classroom</Link>
                             <span><FaChevronRight className='text-sm mx-1 opacity-45' /></span>
-                            <Link to={`/classroom/${subject}`} className='text-red-700'>{subject}</Link>
+                            <Link to={`/classroom/${subject}`} className='text-[#344CB7]'>{subject}</Link>
                             <span><FaChevronRight className='text-sm mx-1 opacity-45' /></span>
                             <p className="text-sm opacity-70 lowercase">{trim(currentQuestion?.text || '', 20)}</p>
                         </h1>
                         <div className='border border-solid shadow-sm px-5 py-4 mt-5'>
-                            <h1 className='font-roboto font-500 text-4xl text-red-800 opacity-95 smd:text-2xl'
+                            <h1 className='font-roboto font-500 text-4xl text-[#344CB7] opacity-95 smd:text-2xl'
                                 dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(trim(currentQuestion?.question || '', 60)) }}
                             >
                             </h1>
                         </div>
                         <div className='grid grid-cols-3 hrmd:grid-cols-1 mt-4 gap-5'>
                             <div className='col-span-2 p-4 shadow h-fit'>
-                                <p className="capitalize text-xs font-700 font-mon text-slate-50 bg-red-600 w-fit px-2 py-1 rounded-md">{subject.replace(/-/g, " ")}</p>
+                                <p className="capitalize text-xs font-700 font-mon text-slate-50 bg-[#1F509A] w-fit px-2 py-1 rounded-md">{subject.replace(/-/g, " ")}</p>
                                 <div className="mt-5">
                                     <p className="text-base/relaxed font-roboto mb-4"
                                         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(currentQuestion?.question) }}
@@ -67,7 +67,7 @@ function Question() {
                                         })}
                                     </ul>
                                 </div>
-                                <div className="border-l-4 border-solid border-red-700 ml-10 mt-6 p-2 shadow aism:ml-5">
+                                <div className="border-l-4 border-solid border-[#344CB7] ml-10 mt-6 p-2 shadow aism:ml-5">
                                     <p className="font-mon font-500">
                                         The correct answer is ({`${currentQuestion?.answer.text}`})
                                     </p>

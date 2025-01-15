@@ -120,7 +120,7 @@ function StudentHomeDashboard() {
                         <UserDetails user={auth} />
                     )}
                     <div className='my-8 mx-10 lg:mx-4'>
-                        <h1 className='mb-7 text-red-600 text-4xl aism:text-2xl aism:mb-5'>CBT Exam History: <span className='text-slate-950'>{data?.length}</span></h1>
+                        <h1 className='mb-7 text-[#1F509A] text-4xl aism:text-2xl aism:mb-5'>CBT Exam History: <span className='text-slate-950'>{data?.length}</span></h1>
                         <div className='border border-solid border-gray-100 grid grid-cols-7 items-center lg:w-screen htmd:w-full htmd:grid-cols-5 aism:grid-cols-2'>
                             <div className='border-r border-solid border-gray-200 py-3 col-span-3 htmd:border-b htmd:px-2'>
                                 <h1 className='font-poppins font-600'>Exam Details</h1>

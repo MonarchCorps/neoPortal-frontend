@@ -29,11 +29,11 @@ function Faq() {
         <section>
             <div className="max-w-[40rem] mx-auto mt-20 px-10">
                 <div className="max max-w-[20rem] mx-auto text-center mb-5">
-                    <button className='cursor-text select-text px-6 py-1 rounded-md bg-red-900 text-slate-50 text-base font-600 mb-3'>
+                    <button className='cursor-text select-text px-6 py-1 rounded-md bg-[#1F509A] text-slate-50 text-base font-600 mb-3'>
                         Faq
                     </button>
                     <h1 className='font-mon mb-2'>Most frequent questions and answers</h1>
-                    <div className='bg-red-900 h-1 w-full'></div>
+                    <div className='bg-[#1F509A] h-1 w-full'></div>
                 </div>
                 <Accordion
                     type="multiple"
@@ -44,7 +44,7 @@ function Faq() {
                     {faqs.map(faq => {
                         return (
                             <AccordionItem value={faq.id} key={faq.id}>
-                                <AccordionTrigger className={`font-mon text-start ${openItems.includes(faq.id) ? 'text-red-900' : ''}`} style={{ textDecoration: 'none', userSelect: 'text' }}>{faq.title}</AccordionTrigger>
+                                <AccordionTrigger className={`font-mon text-start ${openItems.includes(faq.id) ? 'text-[#1F509A]' : ''}`} style={{ textDecoration: 'none', userSelect: 'text' }}>{faq.title}</AccordionTrigger>
                                 <AccordionContent className='font-roboto'>
                                     {faq.desc}
                                 </AccordionContent>

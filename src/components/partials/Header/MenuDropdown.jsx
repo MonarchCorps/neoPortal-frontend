@@ -83,21 +83,21 @@ function MenuDropdown() {
 							<HoverCardContent className="rounded-none absolute -left-20 top-[3px] shadow-sm p-0">
 								<Link
 									to="/classroom"
-									className="px-2 text-red-600 text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none"
+									className="px-2 text-[#1F509A] text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none"
 									onClick={scrollTop}
 								>
 									<span className="font-sans">Study now</span>
 								</Link>
 								<Link
 									to="/cbt-practice/live-exam"
-									className="px-2 text-red-600 text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none"
+									className="px-2 text-[#1F509A] text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none"
 									onClick={scrollTop}
 								>
 									<span className="font-sans">Live exam</span>
 								</Link>
 								<Link
 									to="/cbt-practice"
-									className="px-2 text-red-600 text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none"
+									className="px-2 text-[#1F509A] text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none"
 									onClick={scrollTop}
 								>
 									<span className="font-sans">Practice exam</span>

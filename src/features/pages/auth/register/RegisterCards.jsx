@@ -35,7 +35,7 @@ function RegisterCards() {
                     return (
                         <button
                             key={rLink.id}
-                            className={`shadow p-5 flex flex-col justify-between items-center rounded-xl cursor-pointer  border-solid focus:border-red-600 ${persona == rLink.persona ? 'border-2 border-red-600' : ''}`}
+                            className={`shadow p-5 flex flex-col justify-between items-center rounded-xl cursor-pointer  border-solid focus:border-[#1F509A] ${persona == rLink.persona ? 'border-2 border-[#1F509A]' : ''}`}
                             onClick={() => {
                                 if (persona === rLink.persona) {
                                     setPersona('')
@@ -61,7 +61,7 @@ function RegisterCards() {
             <div className='w-full text-center mt-12' ref={nextRef}>
                 <button
                     disabled={!persona}
-                    className={`bg-red-700 text-[#fff] py-3 px-7 rounded-md transition-all border border-solid shadow-inner ${!persona ? 'opacity-45' : 'hover:border-red-700 hover:bg-[#fff] hover:text-red-700 '}`}
+                    className={`bg-[#344CB7] text-[#fff] py-3 px-7 rounded-md transition-all border border-solid shadow-inner ${!persona ? 'opacity-45' : 'hover:border-[#344CB7] hover:bg-[#fff] hover:text-[#344CB7] '}`}
                     onClick={() => { scrollTop(); handleRedirect('web', persona) }}
                 >
                     Next

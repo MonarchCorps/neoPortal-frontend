@@ -262,7 +262,7 @@ function CbtExamConfig() {
                         type='button'
                         disabled
                     >
-                        <Loading2 text='Starting exam' data='' isLoading={isPending} className='opacity-65 border-2 border-solid border-red-600 bg-red-600 text-[#fff] shadow-sm p-3 transition-all duration-300 hover:text-red-600 hover:bg-[#eee] hover:rounded-md' />
+                        <Loading2 text='Starting exam' data='' isLoading={isPending} className='opacity-65 border-2 border-solid border-[#1F509A] bg-[#1F509A] text-[#fff] shadow-sm p-3 transition-all duration-300 hover:text-[#1F509A] hover:bg-[#eee] hover:rounded-md' />
                     </button>
                 ) : (
                     <button
@@ -274,7 +274,7 @@ function CbtExamConfig() {
                                 handleStartExam()
                             }
                         }}
-                        className='border-2 border-solid border-red-600 bg-red-600 text-[#fff] shadow-sm p-3 transition-all duration-300 hover:text-red-600 hover:bg-[#eee] hover:rounded-md'>
+                        className='border-2 border-solid border-[#1F509A] bg-[#1F509A] text-[#fff] shadow-sm p-3 transition-all duration-300 hover:text-[#1F509A] hover:bg-[#eee] hover:rounded-md'>
                         Start Exam
                     </button>
                 )}

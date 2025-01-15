@@ -107,14 +107,14 @@ function SubHeadingSection({ questions, setFilteredData }) {
                     <Link
                         to="/classroom"
                         onClick={scrollTop}
-                        className="border-2 border-solid border-red-600 text-red-600 shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee] usm:text-center"
+                        className="border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-[#1F509A] hover:text-[#eee] usm:text-center"
                     >
                         Change Subject
                     </Link>
                     <button
                         type="button"
                         onClick={resetFilters}
-                        className="ml-2 usm:ml-0 border-2 border-solid border-red-600 text-red-600 shadow-sm p-2 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee]"
+                        className="ml-2 usm:ml-0 border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-2 rounded-md transition-all duration-300 hover:bg-[#1F509A] hover:text-[#eee]"
                     >
                         Reset Selections
                     </button>

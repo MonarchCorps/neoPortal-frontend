@@ -28,13 +28,13 @@ function Nav() {
                     </HoverCardTrigger>
                     <HoverCardContent className="p-0 absolute -left-10 -top-1 rounded-none border border-solid border-slate-400">
                         <div>
-                            <Link to='/classroom' className='border-b border-solid border-b-slate-300 px-4 text-red-600 text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none' onClick={scrollTop}>
+                            <Link to='/classroom' className='border-b border-solid border-b-slate-300 px-4 text-[#074799] text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none' onClick={scrollTop}>
                                 <span className='font-sans'>Study now</span>
                             </Link>
-                            <Link to='/cbt-practice/live-exam' className='border-b border-solid border-b-slate-300 px-4 text-red-600 text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none' onClick={scrollTop}>
+                            <Link to='/cbt-practice/live-exam' className='border-b border-solid border-b-slate-300 px-4 text-[#074799] text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none' onClick={scrollTop}>
                                 <span className='font-sans'>Live exam</span>
                             </Link>
-                            <Link to='/cbt-practice' className='border-b border-solid border-b-slate-300 px-4 text-red-600 text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none' onClick={scrollTop}>
+                            <Link to='/cbt-practice' className='border-b border-solid border-b-slate-300 px-4 text-[#074799] text-sm font-karla cursor-pointer font-400 hover:bg-[#f2f2f2] py-2 grid grid-flow-col justify-start items-center gap-3 select-none' onClick={scrollTop}>
                                 <span className='font-sans'>Practice exam</span>
                             </Link>
                         </div>

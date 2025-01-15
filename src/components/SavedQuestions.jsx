@@ -66,14 +66,14 @@ function SavedQuestions() {
             <main className="flex-1 min-h-[55vh]">
                 <section>
                     <div className='pt-40 tmd:pt-48 w-[85%] max-w-[1204px] mx-auto'>
-                        {!isLoading && savedQuestions?.length > 0 && <h1 className="text-2xl mb-10 text-red-600 font-poppins">Here are a list of your saved questions</h1>}
+                        {!isLoading && savedQuestions?.length > 0 && <h1 className="text-2xl mb-10 text-[#1F509A] font-poppins">Here are a list of your saved questions</h1>}
                         {!isLoading && savedQuestions?.length > 0 ? (
                             <div>
                                 {
                                     filteredData?.map((question, i) => {
                                         return (
                                             <div className="flex gap-5" key={i}>
-                                                <p className="text-[#fff] bg-red-700 size-fit px-4 py-2 rounded-full font-karla font-700 text-base grid place-content-center">
+                                                <p className="text-[#fff] bg-[#344CB7] size-fit px-4 py-2 rounded-full font-karla font-700 text-base grid place-content-center">
                                                     {page * n + i + 1}
                                                 </p>
                                                 <div>
@@ -103,13 +103,13 @@ function SavedQuestions() {
                                                         <Link
                                                             onClick={scrollTop}
                                                             to={`/classroom/mathematics/${question?._id}`}
-                                                            className="border-2 border-solid border-red-600 text-red-600 shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-[#eee] text-center w-40"
+                                                            className="border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-3 rounded-md transition-all duration-300 hover:bg-[#1F509A] hover:text-[#eee] text-center w-40"
                                                         >
                                                             View Question
                                                         </Link>
 
                                                         <button
-                                                            className={`ml-2 ixsm:ml-0 border-2 border-solid border-red-600 text-red-600 shadow-sm p-2 py-3 rounded-md transition-all duration-300 w-40 grid place-content-center ${handleUnSave.isPending ? 'bg-opacity-80 border-gray-400' : ' hover:bg-red-600 hover:text-[#eee]'}`}
+                                                            className={`ml-2 ixsm:ml-0 border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-2 py-3 rounded-md transition-all duration-300 w-40 grid place-content-center ${handleUnSave.isPending ? 'bg-opacity-80 border-gray-400' : ' hover:bg-[#1F509A] hover:text-[#eee]'}`}
                                                             onClick={() => handleUnSave.mutate({ qId: question?._id })}
                                                             disabled={handleUnSave.isPending}
                                                         >

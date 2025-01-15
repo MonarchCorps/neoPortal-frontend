@@ -17,7 +17,7 @@ function Classroom() {
                 <section>
                     <div className='pt-40 w-[85%] max-w-[1204px] mx-auto'>
                         <h1 className='flex items-center'>
-                            <Link to='/' className='text-red-700'>Home</Link>
+                            <Link to='/' className='text-[#344CB7]'>Home</Link>
                             <span><FaChevronRight className='text-sm mx-1 opacity-45' /></span>
                             <p className='font-300 text-[0.95rem] opacity-65'>{path}</p>
                         </h1>

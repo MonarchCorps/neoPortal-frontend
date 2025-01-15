@@ -33,7 +33,7 @@ function SidebarState({ navLinks, extraLinks, excludedIndices, comparePath }) {
     const getActiveStyles = (path) => {
         if (isActiveFunc(path).isActive) {
             return {
-                backgroundColor: '#c13a3a',
+                backgroundColor: '#1F509A',
                 color: '#eee',
                 fontWeight: '700'
             };
@@ -51,7 +51,7 @@ function SidebarState({ navLinks, extraLinks, excludedIndices, comparePath }) {
                         onClick={scrollTop}
                         className='font-500 font-mon text-2xl bg-transparent select-none text-nowrap grid grid-cols-2'
                     >
-                        <span className='bg-red-900 p-2 text-[#fff] flex items-center'>Exam</span><span className='bg-[#fff] p-2 text-slate-900 flex items-center'> Portal</span>
+                        <span className='bg-[#074799] p-2 text-[#fff] flex items-center'>Exam</span><span className='bg-[#fff] p-2 text-slate-900 flex items-center'> Portal</span>
                     </Link>
                     <div className='grid items-center justify-end'>
                         <SidebarTrigger className="z-[1000]" />

@@ -34,20 +34,20 @@ function Subject() {
                 <section>
                     <div className='pt-40 w-[85%] max-w-[1204px] mx-auto'>
                         <h1 className='flex items-center'>
-                            <Link to='/' className='text-red-700'>Home</Link>
+                            <Link to='/' className='text-[#344CB7]'>Home</Link>
                             <span><FaChevronRight className='text-sm mx-1 opacity-45' /></span>
-                            <Link to='/classroom' className='text-red-700'>Classroom</Link>
+                            <Link to='/classroom' className='text-[#344CB7]'>Classroom</Link>
                             <span><FaChevronRight className='text-sm mx-1 opacity-45' /></span>
                             <p className='font-300 text-[0.95rem] opacity-65'>{subject}</p>
                         </h1>
                         <div className='border border-solid shadow-sm px-5 py-4 mt-5'>
-                            <h1 className='font-roboto font-500 text-3xl text-red-800 opacity-95 cemd:text-2xl xsm:text-xl'>
+                            <h1 className='font-roboto font-500 text-3xl text-[#344CB7] opacity-95 cemd:text-2xl xsm:text-xl'>
                                 {currentSubject?.text} Past Questions, WAEC, NECO and Post UTME Past Questions
                             </h1>
                             <p className="font-roboto text-base/normal mt-3 cemd:text-sm/relaxed xsm:text-xs/relaxed">{currentSubject?.desc}</p>
                         </div>
                         <div className='mt-6'>
-                            <Link to='/cbt-practice' onClick={scrollTop} className='ml-2 border-2 border-solid border-red-600 bg-red-600 text-[#fff] shadow-sm p-2 rounded-md transition-all duration-300 hover:text-red-600 hover:bg-[#eee]'>
+                            <Link to='/cbt-practice' onClick={scrollTop} className='ml-2 border-2 border-solid border-[#1F509A] bg-[#1F509A] text-[#fff] shadow-sm p-2 rounded-md transition-all duration-300 hover:text-[#1F509A] hover:bg-[#eee]'>
                                 Start a free cbt practice exam
                             </Link>
                         </div>
@@ -57,12 +57,12 @@ function Subject() {
                                 <QuestionsList filteredData={filteredData} />
                             </div>
                             <div className='shadow rounded overflow-hidden h-fit ilg:max-w-[30rem]'>
-                                <h1 className='bg-red-900 text-slate-50 px-4 py-3 font-mon font-600 text-base border border-solid border-red-600 rounded-t'>Other subjects</h1>
+                                <h1 className='bg-[#074799] text-slate-50 px-4 py-3 font-mon font-600 text-base border border-solid border-[#1F509A] rounded-t'>Other subjects</h1>
                                 <ul >
                                     {subjects.filter(sub => sub.link !== subject).map(subject => {
                                         return (
                                             <li key={subject.id} className='px-4 py-3 border-b border-solid border-gray-200'>
-                                                <Link to={`/classroom/${subject.link}`} onClick={scrollTop} className='transition-colors duration-100 hover:text-red-500'>
+                                                <Link to={`/classroom/${subject.link}`} onClick={scrollTop} className='transition-colors duration-100 hover:text-[#608BC1]'>
                                                     {subject.text}
                                                 </Link>
                                             </li>

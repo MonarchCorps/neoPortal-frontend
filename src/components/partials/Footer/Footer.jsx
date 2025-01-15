@@ -7,7 +7,7 @@ function Footer() {
     const { scrollTop } = useScrollTop()
 
     return (
-        <footer className='bg-red-900 mt-20 '>
+        <footer className='bg-[#344CB7] mt-20 '>
             <div className='max-w-[88%] mx-auto grid grid-flow-row py-14'>
                 <div className='flex justify-between mb-5 fxsm:flex-col fxsm:gap-4 fxsm:mb-9 fxsm:items-center'>
                     <Link
@@ -15,7 +15,7 @@ function Footer() {
                         onClick={scrollTop}
                         className='font-500 font-mon text-2xl bg-transparent select-none'
                     >
-                        <span className='bg-red-900 p-1 text-[#fff]'>Exam</span><span className='bg-[#fff] p-1 text-slate-900'> Portal</span>
+                        <span className='bg-[] p-1 text-[#fff]'>Exam</span><span className='bg-[#fff] p-1 text-slate-900'> Portal</span>
                     </Link>
                     <div className='flex gap-3'>
                         <ShareButton url={window.location} />

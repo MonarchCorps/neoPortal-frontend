@@ -59,14 +59,14 @@ function ExamHistoryWrapper() {
                                 <h1 className='text-[2rem] font-500 font-serif msm:text-xl'>
                                     {auth?.name || 'Student'}
                                 </h1>
-                                <p className="text-red-600 font-poppins msm:text-base">CBT Exam History</p>
+                                <p className="text-[#1F509A] font-poppins msm:text-base">CBT Exam History</p>
                                 <p className="text-sm block aism:hidden">You have practiced a total of {data?.length} Free CBT Exams</p>
                             </div>
                         </div>
                         <p className="text-sm hidden aism:block aism:mb-6 text-wrap">You have practiced a total of {data?.length} Free CBT Exams</p>
                     </div>
                     <div className="my-5 mb-8">
-                        <Link to='/cbt-practice' onClick={scrollTop} className='ml-2 border-2 border-solid border-red-600 bg-red-600 text-[#fff] shadow-sm p-2 rounded-md transition-all duration-300 hover:text-red-600 hover:bg-[#eee]'>
+                        <Link to='/cbt-practice' onClick={scrollTop} className='ml-2 border-2 border-solid border-[#1F509A] bg-[#1F509A] text-[#fff] shadow-sm p-2 rounded-md transition-all duration-300 hover:text-[#1F509A] hover:bg-[#eee]'>
                             Start a free cbt practice exam
                         </Link>
                     </div>

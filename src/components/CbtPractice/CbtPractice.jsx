@@ -20,10 +20,10 @@ function CbtPractice() {
                 <section>
                     <div className='pt-40 tmd:pt-48 w-[85%] max-w-[1204px] mx-auto'>
                         <h1 className='flex items-center'>
-                            <Link onClick={scrollTop} to='/' className='text-red-700'>Home</Link>
+                            <Link onClick={scrollTop} to='/' className='text-[#1F509A]'>Home</Link>
                             <span><FaChevronRight className='text-sm mx-1 opacity-45' /></span>
                             {rPath === 'exam-config' ? (
-                                <Link onClick={scrollTop} to='/cbt-practice' className='text-red-700'>Cbt-Practice</Link>
+                                <Link onClick={scrollTop} to='/cbt-practice' className='text-[#1F509A]'>Cbt-Practice</Link>
                             ) : (
                                 <p className='font-300 text-[0.95rem] opacity-65'>cbt-practice</p>
                             )}
@@ -35,7 +35,7 @@ function CbtPractice() {
                             )}
                         </h1>
                         <div className='border border-solid shadow-sm px-5 py-4 mt-5'>
-                            <h1 className='font-roboto font-500 text-3xl text-red-800 opacity-95 md:text-2xl asm:text-base'>
+                            <h1 className='font-roboto font-500 text-3xl text-[#1F509A] opacity-95 md:text-2xl asm:text-base'>
                                 {rPath !== 'exam-config' ? (
                                     'Practice Exam For JAMB, WAEC, NECO and Post UTME'
                                 ) : (
@@ -46,14 +46,14 @@ function CbtPractice() {
                         <div className='grid grid-cols-3 ilg:grid-cols-1 mt-4 gap-5'>
                             <div className='col-span-2 h-fit'>
                                 <div className='shadow p-4'>
-                                    <div className="mx-5 my-2 border-l-4 border-solid border-red-700 p-3 shadow font-mon font-500 text-sm fxsm:mx-0 asm:text-sm">
+                                    <div className="mx-5 my-2 border-l-4 border-solid border-[#1F509A] p-3 shadow font-mon font-500 text-sm fxsm:mx-0 asm:text-sm">
                                         Quick Tip: <span>Select your exam type and subjects, then click <strong>&quot;Configure Exam&quot;</strong> to begin.</span>
                                     </div>
                                     <h1 className='pb-3 mt-4 mb-3 font-sans text-[1.15rem] text-slate-950 opacity-80 font-500 border-b border-solid border-b-gray-200 md:text-base chsm:text-sm/relaxed asm:text-xs/relaxed'>
                                         Prepare for success with JAMB, Post UTME, WAEC, and NECO past questions—all designed to help you ace your exams and secure admission into your dream university.
                                     </h1>
                                     <div className='mt-6 mb-3'>
-                                        <Link to='/cbt-practice/custom' onClick={scrollTop} className='border-2 border-solid border-red-600 bg-red-600 text-[#fff] shadow-sm p-2 transition-all duration-300 hover:text-red-600 hover:bg-[#eee] hover:rounded-md fxsm:text-sm'>
+                                        <Link to='/cbt-practice/' onClick={scrollTop} className='border-2 border-solid border-[#1F509A] bg-[#1F509A] text-[#fff] shadow-sm p-2 transition-all duration-300 hover:text-[#1F509A] hover:bg-[#eee] hover:rounded-md fxsm:text-sm'>
                                             Start a Custom Exam
                                         </Link>
                                     </div>
