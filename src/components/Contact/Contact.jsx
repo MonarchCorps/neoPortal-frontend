@@ -7,6 +7,7 @@ import toast from 'react-hot-toast'
 import useAxiosPrivate from '@/hooks/useAxiosPrivate'
 import useAuth from '@/hooks/useAuth'
 import { useLocation, useNavigate } from 'react-router-dom'
+import SubSection from './SubSection'
 
 function Contact() {
 
@@ -187,6 +188,7 @@ function Contact() {
                             </div>
 
                         </div>
+                        <SubSection />
                     </div>
                 </section>
             </main >
