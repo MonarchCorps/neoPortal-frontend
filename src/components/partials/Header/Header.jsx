@@ -47,14 +47,14 @@ function Header() {
                                 <Link
                                     to='/auth'
                                     onClick={scrollTop}
-                                    className='border grid place-content-center px-3 py-1 rounded-md text-[#eee] font-600 transition-all'
+                                    className='border grid place-content-center px-3 py-1 rounded-md text-[#eee] font-600 transition-all hover:bg-[#344CB7]'
                                 >
                                     <span>Login</span>
                                 </Link>
                                 <Link
                                     to='/register'
                                     onClick={scrollTop}
-                                    className='border border-current grid place-content-center px-3 py-1 text-[#074799] bg-[#eee] rounded-md'
+                                    className='border border-current grid place-content-center px-3 py-1 text-[#074799] bg-[#eee] rounded-md hover:bg-[#c0bebe]'
                                 >
                                     Sign Up
                                 </Link>
