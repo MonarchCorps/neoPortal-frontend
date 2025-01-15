@@ -19,7 +19,8 @@ function Contact() {
         name: '',
         email: '',
         content: '',
-        subject: ''
+        subject: '',
+        phoneNumber: ''
     })
 
     const handleChange = (e) => {
@@ -35,7 +36,8 @@ function Contact() {
             name: '',
             email: '',
             subject: '',
-            content: ''
+            content: '',
+            phoneNumber: ''
         })
     }
 
@@ -120,8 +122,23 @@ function Contact() {
                                 />
                             </div>
 
+                            <div className='flex flex-col gap-1 col-span-2'>
+                                <label htmlFor="email" className='text-base/relaxed font-500'>Phone Number</label>
+                                <input
+                                    type="number"
+                                    name="phoneNumber"
+                                    id="phoneNumber"
+                                    required
+                                    placeholder="Phone Number"
+                                    className={`border-[1px] border-solid border-[#aeacac] h-[40px] p-2 rounded placeholder:text-sm w-full ${handleSendMail.isPending ? 'bg-[#eff5ff]' : ''}`}
+                                    onChange={handleChange}
+                                    value={formData.phoneNumber}
+                                    readOnly={handleSendMail.isPending}
+                                />
+                            </div>
+
                             <div className='col-span-2 flex flex-col gap-1'>
-                                <label htmlFor="content" className='text-base/relaxed font-500'>Content</label>
+                                <label htmlFor="content" className='text-base/relaxed font-500'>Message</label>
                                 <textarea
                                     name="content"
                                     id="content"
