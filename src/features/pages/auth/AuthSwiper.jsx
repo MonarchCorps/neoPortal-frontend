@@ -2,9 +2,14 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/swiper-bundle.css'
 
-const img1 = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735377912/Exam_Portal/spgya0nusjwyka6zbvsy.jpg'
-const img2 = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735377917/Exam_Portal/elmzvtdbw9li6aanqcko.jpg'
-const img3 = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735377927/Exam_Portal/o3zt5feniddphap6zt8t.jpg'
+// const img1 = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735377912/Exam_Portal/spgya0nusjwyka6zbvsy.jpg'
+const img1 = 'https://res.cloudinary.com/dh5a8opoe/image/upload/f_auto,q_auto/v1/Exam_Portal/v3h4vtr5ewutlrexqnrj'
+
+// const img2 = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735377917/Exam_Portal/elmzvtdbw9li6aanqcko.jpg'
+const img2 = 'https://res.cloudinary.com/dh5a8opoe/image/upload/f_auto,q_auto/v1/Exam_Portal/suhuwhucaxpd0oaqpqs5'
+
+// const img3 = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735377927/Exam_Portal/o3zt5feniddphap6zt8t.jpg'
+const img3 = 'https://res.cloudinary.com/dh5a8opoe/image/upload/f_auto,q_auto/v1/Exam_Portal/nqzlsxlobyflqcw7yrzl'
 
 function AuthSwiper() {
 

@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import useScrollTop from '@/hooks/useScrollTop'
 
 const schoolImg = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735377912/Exam_Portal/spgya0nusjwyka6zbvsy.jpg'
-const teacherImg = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735377917/Exam_Portal/elmzvtdbw9li6aanqcko.jpg'
+// const teacherImg = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735377917/Exam_Portal/elmzvtdbw9li6aanqcko.jpg'
+const teacherImg = 'https://res.cloudinary.com/dh5a8opoe/image/upload/f_auto,q_auto/v1/Exam_Portal/lhanig5rysfj4lzod4dd'
+
 const studentImg = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735377927/Exam_Portal/o3zt5feniddphap6zt8t.jpg'
 
 function RegisterCards() {
