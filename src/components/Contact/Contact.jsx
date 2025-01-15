@@ -1,5 +1,4 @@
 import Header from '../partials/Header/Header'
-import Footer from '../partials/Footer/Footer'
 import { Button } from '../ui/button'
 import { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
@@ -8,6 +7,7 @@ import useAxiosPrivate from '@/hooks/useAxiosPrivate'
 import useAuth from '@/hooks/useAuth'
 import { useLocation, useNavigate } from 'react-router-dom'
 import SubSection from './SubSection'
+import AuthSwiper from '@/features/pages/auth/AuthSwiper'
 
 function Contact() {
 
@@ -74,7 +74,7 @@ function Contact() {
         <>
             <Header />
             <main>
-                <section>
+                <section className='grid grid-cols-2 ilg:grid-cols-1 place-content-center mb-5'>
                     <div className='pt-40 tmd:pt-48 w-[85%] max-w-[700px] mx-auto'>
                         <h1 className='mb-3 font-600 text-4xl'>Contact Page</h1>
                         <div className='w-full grid grid-cols-2 ixsm:flex ixsm:flex-col gap-4'>
@@ -190,9 +190,11 @@ function Contact() {
                         </div>
                         <SubSection />
                     </div>
+                    <div className='ilg:hidden'>
+                        <AuthSwiper />
+                    </div>
                 </section>
             </main >
-            <Footer />
         </>
     )
 }

@@ -3,7 +3,7 @@ import Partner from "./Partner"
 
 function SubSection() {
     return (
-        <div className="mt-10 grid grid-cols-2 place-content-center gap-x-9 gap-y-5">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-9 gap-y-5 w-full">
             <Appointment />
             <Partner />
         </div>

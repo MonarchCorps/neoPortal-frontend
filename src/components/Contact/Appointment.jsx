@@ -79,7 +79,7 @@ function Appointment() {
                                 Schedule
                             </Button>
                         </DialogTrigger>
-                        <DialogContent className='rounded-md max-w-[40rem] mt-10'>
+                        <DialogContent className='rounded-md  mx-auto mt-10'>
                             <DialogClose ref={dialogCloseRef} className="absolute top-2 right-2" />
                             <DialogHeader>
                                 <DialogTitle className='text-start'>

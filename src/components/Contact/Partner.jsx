@@ -68,7 +68,7 @@ function Partner() {
 
     return (
         <>
-            <div className="shadow p-4 rounded-md transition-all transform hover:scale-110 hover:rotate-[2deg] text-center grid place-content-center">
+            <div className="shadow p-4 rounded-md transition-all transform hover:scale-110 hover:rotate-[2deg] text-center grid place-content-center w-64">
                 <div className="flex items-center justify-center w-full mb-2">
                     <FaHandshake className="text-[#a63c3c] text-3xl" />
                 </div>
