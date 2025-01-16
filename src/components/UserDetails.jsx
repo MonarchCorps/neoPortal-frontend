@@ -51,7 +51,7 @@ function UserDetails({ user }) {
             {user?.role === 'student' && (
                 <div className='flex flex-col gap-1 border-b border-solid border-slate-300 pb-2 ahsm:text-sm'>
                     <span className='font-600 text-base text-[#1f2937] ahsm:text-sm'>Number of exams taken</span>
-                    <span>{user?.examCount || 0}</span>
+                    <span>{user?.examCount}</span>
                 </div>
             )}
             {user?.role === 'school' && (
