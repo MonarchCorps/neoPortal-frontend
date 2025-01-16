@@ -51,7 +51,7 @@ function CbtSubjects() {
                 </ul>
             </div>
             <div className='border-y border-solid border-y-gray-200 py-5 mt-4'>
-                <Link to='exam-config' onClick={scrollTop} className='border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-2 rounded-md transition-all duration-300 hover:bg-[#1F509A] hover:text-[#eee]'>
+                <Link onClick={scrollTop} to='exam-config' className='border-2 border-solid border-[#1F509A] text-[#1F509A] shadow-sm p-2 rounded-md transition-all duration-300 hover:bg-[#1F509A] hover:text-[#eee]'>
                     Configure Exam
                 </Link>
             </div>
