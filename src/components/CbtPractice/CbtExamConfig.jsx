@@ -269,7 +269,6 @@ function CbtExamConfig() {
                         onClick={() => {
                             if (!auth?._id) {
                                 navigate('/auth', { state: { from: location } });
-
                             } else {
                                 handleStartExam()
                             }
