@@ -201,7 +201,7 @@ function CbtExam() {
                                                 <button
                                                     key={i}
                                                     className={`whitespace-nowrap p-2 rounded-md capitalize transition-all duration-200 hover:scale-90 flex items-center
-                                                    ${currentSelectedQuestions === subject ? 'bg-[#bd3d3d5c] text-[#1F509A] p-2 font-500' : 'bg-gray-300 text-[#000]'}`}
+                                                    ${currentSelectedQuestions === subject ? 'bg-[#8eadef5c] text-[#1F509A] p-2 font-500' : 'bg-gray-300 text-[#000]'}`}
                                                     onClick={() => {
                                                         setCurrentSelectedQuestions(subject)
                                                         setCurrentQuestionIndex(0)
