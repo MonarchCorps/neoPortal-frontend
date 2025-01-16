@@ -76,8 +76,8 @@ function TeacherHomeDashboard() {
     }, [data, page])
 
     return (
-        <section>
-            <div className='w-full overflow-x-scroll'>
+        <section className='overflow-hidden'>
+            <div style={{ maxWidth: screenWidth }}>
                 <div className='absolute right-0 left-0 h-[19rem] -z-20'>
                     <img
                         src={bgImg}
@@ -121,8 +121,8 @@ function TeacherHomeDashboard() {
                         <UserDetails user={auth} />
                     )}
                     {data?.length > 0 ? (
-                        <div className='overflow-x-scroll max-w-full'>
-                            <div className="mt-10 w-screen min-w-[60rem]">
+                        <div className="overflow-x-scroll w-full">
+                            <div className="w-screen min-w-[60rem]">
                                 <h1 className='mb-7 text-slate-950 text-3xl'>Uploaded Exams</h1>
                                 <TableHead />
                                 <TableBody details={filteredData} page={{ page: page, n: n }} />
