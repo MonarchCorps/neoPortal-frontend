@@ -2,7 +2,7 @@ function LeftHero() {
     return (
         <div className="w-1/2 hrmd:w-full hrmd:max-w-[30rem] hrmd:shadow-sm hrmd:p-2">
             <h1 className="font-sans text-slate-950 font-700 text-5xl mb-6 break-words hlg:text-4xl hrmd:font-600 asm:text-2xl">
-                Innovative, Educative, Elevate Your <span className="text-[#133E87]">Online Exam Hub</span>
+                <span className="text-[#133E87]">Online Exam Hub:</span>  Your Path to Exam Success Starts Here
             </h1>
             <div className="mb-10">
                 <p className="font-mon tracking-tight font-500 hlg:text-sm hrmd:font-600 asm:text-xs">
