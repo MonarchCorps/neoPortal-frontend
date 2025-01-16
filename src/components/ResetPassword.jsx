@@ -43,7 +43,7 @@ function ResetPassword() {
             <main className='flex-1 min-h-[55vh] size-full flex justify-center items-center max-w-[36rem] mx-auto'>
                 <section className='size-full'>
                     <div className='pt-40 tmd:pt-48 px-6 pb-4 size-full'>
-                        <h1 className='text-red-600 font-poppins font-500 text-3xl mb-3'>Reset Password</h1>
+                        <h1 className='text-[#344CB7] font-poppins font-500 text-3xl mb-3'>Reset Password</h1>
 
                         <div className='mb-3 relative'>
                             <input

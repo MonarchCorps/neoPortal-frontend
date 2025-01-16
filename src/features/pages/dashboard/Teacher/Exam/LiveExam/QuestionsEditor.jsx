@@ -332,9 +332,9 @@ function QuestionsEditor({ formData, handleChange }) {
                                         </div>
                                         <div className='flex items-center justify-between gap-2'>
                                             {question.question && !question.answer.text && (
-                                                <p className='bg-[#1F509A] text-[#fff] font-mon font-600 px-2 rounded-md text-sm'>Please select an answer</p>
+                                                <p className='bg-red-700 text-[#fff] font-mon font-600 px-2 rounded-md text-sm'>Please select an answer</p>
                                             )}
-                                            {i + 1 !== 1 && (<button onClick={() => handleRemoveQuestion(i, question.key, questions, setQuestions)} className='text-[#1F509A] p-3 bg-[#608BC1] bg-opacity-15 border border-[#608BC1] rounded-md transition-all duration-200 hover:bg-opacity-100 hover:text-[#eeeded]'>
+                                            {i + 1 !== 1 && (<button onClick={() => handleRemoveQuestion(i, question.key, questions, setQuestions)} className='text-red-600 p-3 bg-red-600 bg-opacity-15 border border-red-700 rounded-md transition-all duration-200 hover:bg-opacity-100 hover:text-[#eeeded]'>
                                                 <FaRegTrashCan />
                                             </button>
                                             )}
@@ -373,7 +373,7 @@ function QuestionsEditor({ formData, handleChange }) {
                                                                 </div>
                                                                 {opt.id !== 'A' && opt.id !== 'B' && (
                                                                     <button
-                                                                        className='text-[#1F509A] p-2 bg-[#608BC1] bg-opacity-15 border border-[#608BC1] rounded-md transition-all duration-200 hover:bg-opacity-100 hover:text-[#eeeded]'
+                                                                        className='text-red-600 p-2 bg-red-700 bg-opacity-15 border border-red-600 rounded-md transition-all duration-200 hover:bg-opacity-100 hover:text-[#eeeded]'
                                                                         onClick={() => handleRemoveOption(i, opt.key, questions, setQuestions)}
                                                                     >
                                                                         <FaRegTrashCan />

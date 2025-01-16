@@ -120,7 +120,7 @@ function TeacherHomeDashboard() {
                         <UserDetails user={auth} />
                     )}
                     {data?.length > 0 ? (
-                        <div className='overflow-x-scroll'>
+                        <div className='overflow-x-scroll max-w-full'>
                             <div className="mt-10 w-screen min-w-[60rem]">
                                 <h1 className='mb-7 text-slate-950 text-3xl'>Uploaded Exams</h1>
                                 <TableHead />

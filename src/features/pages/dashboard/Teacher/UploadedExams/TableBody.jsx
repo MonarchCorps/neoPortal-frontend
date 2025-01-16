@@ -53,7 +53,7 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
                                             </Link>
                                             <Dialog>
                                                 <DialogTrigger asChild>
-                                                    <li className='cursor-pointer text-[#608BC1] font-400 pl-5 hover:font-500 py-2 flex justify-between items-center select-none transition-all duration hover:bg-[#1F509A] hover:text-[#fff]'>
+                                                    <li className='cursor-pointer text-red-600 font-400 pl-5 hover:font-500 py-2 flex justify-between items-center select-none transition-all duration hover:bg-red-700 hover:text-[#fff]'>
                                                         <div className='grid grid-flow-col justify-start items-center gap-3'>
                                                             <FaArrowsToEye />
                                                             <span className='font-sans'>Change Visibility</span>
@@ -133,7 +133,7 @@ function TableBody({ details, handleUpdateExam, handleDeleteExam, page }) {
 
                                                 </DialogContent>
                                             </Dialog>
-                                            <li className='cursor-pointer text-[#608BC1] font-400 pl-5 hover:font-500 py-2 flex justify-between items-center select-none transition-all duration hover:bg-[#1F509A] hover:text-[#fff]' onClick={() => { setDataToDelete(detail?._id); setIsModalOpen(!isModalOpen) }}>
+                                            <li className='cursor-pointer text-red-600 font-400 pl-5 hover:font-500 py-2 flex justify-between items-center select-none transition-all duration hover:bg-red-700 hover:text-[#fff]' onClick={() => { setDataToDelete(detail?._id); setIsModalOpen(!isModalOpen) }}>
                                                 <div className='grid grid-flow-col justify-start items-center gap-3'>
                                                     <FaTrash />
                                                     <span className='font-sans'>Delete Exam</span>

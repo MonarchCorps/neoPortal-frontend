@@ -162,7 +162,7 @@ const SchoolForm = ({ formData, handleChange, setFormData, handleRegister }) => 
                         value={confirmPassword}
                     />
                     {formData.password !== confirmPassword && (
-                        <p className='absolute -bottom-5 font-karla font-700 text-base text-[#074799]'>Password does not match</p>
+                        <p className='absolute -bottom-5 font-karla font-700 text-base text-red-600'>Password does not match</p>
                     )}
                 </div>
 
@@ -290,7 +290,7 @@ const TeacherForm = ({ formData, handleChange, setFormData, handleRegister }) =>
                         value={confirmPassword}
                     />
                     {formData.password !== confirmPassword && (
-                        <p className='absolute -bottom-5 font-karla font-700 text-base text-[#074799]'>Password does not match</p>
+                        <p className='absolute -bottom-5 font-karla font-700 text-base text-red-600'>Password does not match</p>
                     )}
                 </div>
 
@@ -392,7 +392,7 @@ const UserForm = ({ formData, handleChange, setFormData, handleRegister }) => {
                         value={confirmPassword}
                     />
                     {formData.password !== confirmPassword && (
-                        <p className='absolute -bottom-5 font-karla font-700 text-base text-[#074799]'>Password does not match</p>
+                        <p className='absolute -bottom-5 font-karla font-700 text-base text-red-600'>Password does not match</p>
                     )}
                 </div>
 
