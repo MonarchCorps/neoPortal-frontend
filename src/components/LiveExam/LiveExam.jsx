@@ -31,8 +31,9 @@ function LiveExam() {
         mutationFn: () => {
             if (!auth?._id) {
                 return navigate('/auth', { state: { from: location } });
-            }
-            else {
+            } else if (auth?.role === 'teacher' || auth?.role === 'school') {
+                return toast.error('Only students can take exam')
+            } else {
                 return axiosPrivate.post('/login-to-live-exam', {
                     liveId: formData.liveId,
                     userId: auth?._id,

@@ -268,7 +268,9 @@ function CbtExamConfig() {
                     <button
                         onClick={() => {
                             if (!auth?._id) {
-                                navigate('/auth', { state: { from: location } });
+                                return navigate('/auth', { state: { from: location } });
+                            } else if (auth?.role === 'teacher' || auth?.role === 'school') {
+                                return toast.error('Only students can take exam')
                             } else {
                                 handleStartExam()
                             }
