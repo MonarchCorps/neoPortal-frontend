@@ -14,7 +14,7 @@ function About() {
                     <div className='relative'>
                         <img
                             src={aboutHeroImg}
-                            className='h-[90vh] w-full object-cover -z-10 select-none'
+                            className='h-[90vh] w-full object-cover -z-10 select-none opacity-70'
                             alt="About image"
                             loading="lazy"
                         />
