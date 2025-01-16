@@ -3,7 +3,7 @@ import Footer from './partials/Footer/Footer'
 import Header from './partials/Header/Header'
 import SubmitButton from './SubmitButton'
 import toast from 'react-hot-toast'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from '@/api/axios'
 import { useState } from 'react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
@@ -18,6 +18,8 @@ function ResetPassword() {
 
     const valid = password && password === confirmPassword
 
+    const navigate = useNavigate()
+
     const handleResetPassword = useMutation({
         mutationFn: () => axios.post(`/auth/reset-password/${token}`, {
             password
@@ -28,7 +30,8 @@ function ResetPassword() {
             withCredentials: true
         }),
         onSuccess: ({ data }) => {
-            console.log(data)
+            toast.success(data.message)
+            navigate('/auth')
         },
         onError: (error) => {
             console.log(error)
