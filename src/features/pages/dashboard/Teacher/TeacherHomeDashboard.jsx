@@ -11,7 +11,8 @@ import useGetScreenWidth from '@/hooks/useGetScreenWidth'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import ReactPaginate from 'react-paginate'
 
-const bgImg = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735378254/Exam_Portal/zjc6l4h3tehqfrolzmzy.jpg'
+// const bgImg = 'https://res.cloudinary.com/dh5a8opoe/image/upload/q_auto/f_auto/v1735378254/Exam_Portal/zjc6l4h3tehqfrolzmzy.jpg'
+const bgImg = 'https://res.cloudinary.com/dh5a8opoe/image/upload/f_auto,q_auto/v1/Exam_Portal/isw1m68np15c1skojjlg'
 
 function TeacherHomeDashboard() {
 
