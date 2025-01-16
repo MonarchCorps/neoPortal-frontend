@@ -40,7 +40,7 @@ function LiveExamLogin({ handleChange, handleLoginToLiveExam, formData }) {
                     id="name"
                     className='border-[1px] border-solid border-[#aeacac] h-[40px] p-2 rounded placeholder:text-sm w-full bg-[#def5ff]'
                     placeholder="Enter Name"
-                    value={formData.email}
+                    value={formData.name}
                     readOnly
                     title="Email: readOnly"
                 />
