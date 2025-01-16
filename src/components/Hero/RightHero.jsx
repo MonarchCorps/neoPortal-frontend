@@ -34,7 +34,7 @@ function RightHero() {
                         <img
                             src={content.image}
                             alt="Hero Image"
-                            className='size-full object-cover rounded-md h-full min-h-[32rem] max-h-[32rem] hrmd:max-h-full hrmd:h-full'
+                            className='hrmd:opacity-50 size-full object-cover rounded-md h-full min-h-[32rem] max-h-[32rem] hrmd:max-h-full hrmd:h-full'
                             loading='eager'
                         />
                     </SwiperSlide>
