@@ -52,11 +52,11 @@ function CbtPractice() {
                                     <h1 className='pb-3 mt-4 mb-3 font-sans text-[1.15rem] text-slate-950 opacity-80 font-500 border-b border-solid border-b-gray-200 md:text-base chsm:text-sm/relaxed asm:text-xs/relaxed'>
                                         Prepare for success with JAMB, Post UTME, WAEC, and NECO past questions—all designed to help you ace your exams and secure admission into your dream university.
                                     </h1>
-                                    <div className='mt-6 mb-3'>
+                                    {/* <div className='mt-6 mb-3'>
                                         <Link to='/cbt-practice/' onClick={scrollTop} className='border-2 border-solid border-[#1F509A] bg-[#1F509A] text-[#fff] shadow-sm p-2 transition-all duration-300 hover:text-[#1F509A] hover:bg-[#eee] hover:rounded-md fxsm:text-sm'>
                                             Start a Custom Exam
                                         </Link>
-                                    </div>
+                                    </div> */}
 
                                     <Outlet />
 
