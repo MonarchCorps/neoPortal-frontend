@@ -301,7 +301,7 @@ function QuestionsEditor({ formData, setStep }) {
                                 <AccordionItem
                                     key={question.key}
                                     value={question.key}
-                                    className={`border border-solid rounded p-4 mb-2 ${question.question && !question.answer.text ? 'border-[#344CB7]' : ''}`}
+                                    className={`border border-solid rounded p-4 mb-2 ${question.question && !question.answer.text ? 'border-red-600' : ''}`}
                                 >
                                     <div className='flex items-center justify-between flex-wrap gap-2'>
                                         <div className='flex items-center gap-3 mr-3'>
