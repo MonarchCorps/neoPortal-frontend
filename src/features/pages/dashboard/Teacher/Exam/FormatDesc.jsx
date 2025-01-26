@@ -14,7 +14,7 @@ function FormatDesc({ format, handleSetFormat }) {
                         <ShieldQuestionIcon />
                     </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className='px-4 mr-14 overflow-scroll'>
+                <DropdownMenuContent className='px-4 mr-14 '>
                     <DropdownMenuLabel className="p-0 font-normal">
                         Format
                     </DropdownMenuLabel>
